@@ -4115,6 +4115,46 @@
             window.addEventListener("preloader:done", onPreloaderDone);
         });
     })();
+    document.addEventListener("DOMContentLoaded", function() {
+        const togglerButtons = document.querySelectorAll(".menu__body-toggler-button");
+        const menuLists = document.querySelectorAll(".menu__list");
+        togglerButtons.forEach(button => {
+            button.addEventListener("click", function() {
+                togglerButtons.forEach(btn => btn.classList.remove("_active"));
+                menuLists.forEach(list => list.classList.remove("_active"));
+                this.classList.add("_active");
+                const targetId = this.getAttribute("data-menu-list");
+                const targetList = document.getElementById(targetId);
+                if (targetList) targetList.classList.add("_active");
+            });
+        });
+    });
+    document.addEventListener("DOMContentLoaded", function() {
+        const menuLists = document.querySelectorAll(".menu__list");
+        const togglerButtons = document.querySelectorAll(".menu__body-toggler-button");
+        const submenus = document.querySelectorAll(".menu__submenu");
+        const togglerWrapper = document.querySelector(".menu__body-toggler");
+        document.querySelectorAll("[data-show-submenu]").forEach(link => {
+            link.addEventListener("click", function(e) {
+                e.preventDefault();
+                const submenuId = this.getAttribute("data-show-submenu");
+                menuLists.forEach(list => list.classList.remove("_active"));
+                togglerButtons.forEach(btn => btn.classList.remove("_active"));
+                submenus.forEach(sub => sub.classList.remove("_active"));
+                if (togglerWrapper) togglerWrapper.classList.remove("_active");
+                const submenu = document.getElementById(submenuId);
+                if (submenu) submenu.classList.add("_active");
+            });
+        });
+        document.querySelectorAll(".menu__submenu-back").forEach(backBtn => {
+            backBtn.addEventListener("click", function() {
+                submenus.forEach(sub => sub.classList.remove("_active"));
+                if (togglerWrapper) togglerWrapper.classList.add("_active");
+                if (togglerButtons.length) togglerButtons[0].classList.add("_active");
+                if (menuLists.length) menuLists[0].classList.add("_active");
+            });
+        });
+    });
     window["FLS"] = false;
     addLoadedClass();
     menuInit();

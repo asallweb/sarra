@@ -6,13 +6,13 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20250723082857">
+	<link rel="stylesheet" href="css/style.min.css?_v=20250723100348">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap&_v=20250723082857" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap&_v=20250723100348" rel="stylesheet">
 </head>
 
 <body>
@@ -131,10 +131,48 @@
 							<div class="menu__icon-text">МЕНЮ</div>
 						</button>
 						<nav class="menu__body">
-							<ul class="menu__list">
-								<li class="menu__item"><a href="" class="menu__link">О бренде</a></li>
-								<li class="menu__item"><a href="" class="menu__link">Покупателям</a></li>
-							</ul>
+							<div class="menu__body-inner">
+								<div class="menu__body-toggler _active">
+									<button class="menu__body-toggler-button _active" data-menu-list="catalog">Каталог</button>
+									<button class="menu__body-toggler-button" data-menu-list="customers">Покупателям</button>
+								</div>
+								<ul class="menu__list _active" id="catalog">
+									<li class="menu__item"><a href="" class="menu__link" data-show-submenu="submenu-1">Кресты</a></li>
+									<li class="menu__item"><a href="" class="menu__link">Подвески</a></li>
+									<li class="menu__item"><a href="" class="menu__link">Цепи</a></li>
+									<li class="menu__item"><a href="" class="menu__link">Шнурки</a></li>
+									<li class="menu__item"><a href="" class="menu__link">Кольца и перстни</a></li>
+									<li class="menu__item"><a href="" class="menu__link">Браслеты</a></li>
+									<li class="menu__item"><a href="" class="menu__link">Бусины</a></li>
+									<li class="menu__item"><a href="" class="menu__link">Серьги</a></li>
+									<li class="menu__item"><a href="" class="menu__link">Аксессуары</a></li>
+								</ul>
+								<ul class="menu__list" id="customers">
+									<li class="menu__item"><a href="" class="menu__link">Покупателям</a></li>
+									<li class="menu__item"><a href="" class="menu__link">О бренде</a></li>
+									<li class="menu__item"><a href="" class="menu__link">Новости</a></li>
+									<li class="menu__item"><a href="" class="menu__link">История</a></li>
+									<li class="menu__item"><a href="" class="menu__link">Шоурум в Москве</a></li>
+									<li class="menu__item"><a href="" class="menu__link">Контакты</a></li>
+								</ul>
+								<div class="menu__submenu" id="submenu-1">
+									<button class="menu__submenu-back">
+										<svg width="8" height="14">
+											<use xlink:href="img/icons/icons.svg#icon-arrow-2"></use>
+										</svg>
+										КРЕСТЫ
+									</button>
+									<a href="" class="menu__submenu-all">
+										Все изделия
+										<svg width="14" height="10">
+											<use xlink:href="img/icons/icons.svg#icon-arrow-1"></use>
+										</svg>
+									</a>
+									<a href="" class="menu__submenu-link">Серебряные</a>
+									<a href="" class="menu__submenu-link">Позолоченные</a>
+									<a href="" class="menu__submenu-link">Из дерева</a>
+								</div>
+							</div>
 						</nav>
 					</div>
 					<button class="header__catalog-btn">
@@ -1004,7 +1042,7 @@
 			</div>
 		</footer>
 	</div>
-	<script src="js/app.min.js?_v=20250723082857"></script>
+	<script src="js/app.min.js?_v=20250723100348"></script>
 </body>
 
 </html>
