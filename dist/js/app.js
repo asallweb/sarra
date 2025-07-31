@@ -1588,19 +1588,14 @@
         if (swiper.destroyed) return;
         const {params, slidesEl} = swiper;
         const slidesPerView = params.slidesPerView === "auto" ? swiper.slidesPerViewDynamic() : params.slidesPerView;
-        let slideToIndex = swiper.clickedIndex;
+        let slideToIndex = swiper.getSlideIndexWhenGrid(swiper.clickedIndex);
         let realIndex;
         const slideSelector = swiper.isElement ? `swiper-slide` : `.${params.slideClass}`;
+        const isGrid = swiper.grid && swiper.params.grid && swiper.params.grid.rows > 1;
         if (params.loop) {
             if (swiper.animating) return;
             realIndex = parseInt(swiper.clickedSlide.getAttribute("data-swiper-slide-index"), 10);
-            if (params.centeredSlides) if (slideToIndex < swiper.loopedSlides - slidesPerView / 2 || slideToIndex > swiper.slides.length - swiper.loopedSlides + slidesPerView / 2) {
-                swiper.loopFix();
-                slideToIndex = swiper.getSlideIndex(utils_elementChildren(slidesEl, `${slideSelector}[data-swiper-slide-index="${realIndex}"]`)[0]);
-                utils_nextTick(() => {
-                    swiper.slideTo(slideToIndex);
-                });
-            } else swiper.slideTo(slideToIndex); else if (slideToIndex > swiper.slides.length - slidesPerView) {
+            if (params.centeredSlides) swiper.slideToLoop(realIndex); else if (slideToIndex > (isGrid ? (swiper.slides.length - slidesPerView) / 2 - (swiper.params.grid.rows - 1) : swiper.slides.length - slidesPerView)) {
                 swiper.loopFix();
                 slideToIndex = swiper.getSlideIndex(utils_elementChildren(slidesEl, `${slideSelector}[data-swiper-slide-index="${realIndex}"]`)[0]);
                 utils_nextTick(() => {
@@ -1628,7 +1623,18 @@
                 el.setAttribute("data-swiper-slide-index", index);
             });
         };
+        const clearBlankSlides = () => {
+            const slides = utils_elementChildren(slidesEl, `.${params.slideBlankClass}`);
+            slides.forEach(el => {
+                el.remove();
+            });
+            if (slides.length > 0) {
+                swiper.recalcSlides();
+                swiper.updateSlides();
+            }
+        };
         const gridEnabled = swiper.grid && params.grid && params.grid.rows > 1;
+        if (params.loopAddBlankSlides && (params.slidesPerGroup > 1 || gridEnabled)) clearBlankSlides();
         const slidesPerGroup = params.slidesPerGroup * (gridEnabled ? params.grid.rows : 1);
         const shouldFillGroup = swiper.slides.length % slidesPerGroup !== 0;
         const shouldFillGrid = gridEnabled && swiper.slides.length % params.grid.rows !== 0;
@@ -1683,7 +1689,7 @@
             if (centeredSlides && slidesPerView % 2 === 0) slidesPerView += 1;
         }
         const slidesPerGroup = params.slidesPerGroupAuto ? slidesPerView : params.slidesPerGroup;
-        let loopedSlides = slidesPerGroup;
+        let loopedSlides = centeredSlides ? Math.max(slidesPerGroup, Math.ceil(slidesPerView / 2)) : slidesPerGroup;
         if (loopedSlides % slidesPerGroup !== 0) loopedSlides += slidesPerGroup - loopedSlides % slidesPerGroup;
         loopedSlides += params.loopAdditionalSlides;
         swiper.loopedSlides = loopedSlides;
@@ -2778,6 +2784,10 @@
         getSlideIndexByData(index) {
             return this.getSlideIndex(this.slides.find(slideEl => slideEl.getAttribute("data-swiper-slide-index") * 1 === index));
         }
+        getSlideIndexWhenGrid(index) {
+            if (this.grid && this.params.grid && this.params.grid.rows > 1) if (this.params.grid.fill === "column") index = Math.floor(index / this.params.grid.rows); else if (this.params.grid.fill === "row") index %= Math.ceil(this.slides.length / this.params.grid.rows);
+            return index;
+        }
         recalcSlides() {
             const swiper = this;
             const {slidesEl, params} = swiper;
@@ -3220,7 +3230,7 @@
     }
     function classes_to_selector_classesToSelector(classes) {
         if (classes === void 0) classes = "";
-        return `.${classes.trim().replace(/([\.:!+\/])/g, "\\$1").replace(/ /g, ".")}`;
+        return `.${classes.trim().replace(/([\.:!+\/()[\]])/g, "\\$1").replace(/ /g, ".")}`;
     }
     function Pagination(_ref) {
         let {swiper, extendParams, on, emit} = _ref;
