@@ -4201,6 +4201,10 @@ h6 {
   background: url(../img/backgrounds/footer-bg.webp) center bottom no-repeat;
   background-size: cover
 }
+.footer__wrapper {
+  max-width: 1520px;
+  margin: 0 auto
+}
 .footer__top {
   display: flex;
   justify-content: space-between;
@@ -4302,7 +4306,8 @@ h6 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 40px 0
+  padding: 40px 0;
+  position: relative
 }
 .footer__bottom-side {
   font-size: 12px;
@@ -4318,6 +4323,12 @@ h6 {
   align-items: center;
   justify-content: center;
   gap: 39px
+}
+.footer__bottom,
+.footer__middle,
+.footer__top {
+  padding-left: 140px;
+  padding-right: 140px
 }
 .hero-1 {
   position: relative;
@@ -4427,7 +4438,7 @@ h6 {
 .hero-1__slide {
   display: flex;
   align-items: center;
-  gap: 52px;
+  gap: 102px;
   padding: 0 15px;
   width: 100%;
   opacity: 0!important
@@ -4455,7 +4466,7 @@ h6 {
   justify-content: center
 }
 .hero-1__title {
-  margin-bottom: 60px;
+  margin-bottom: 65px;
   color: #fff;
   font-family: "Cormorant Garamond";
   font-size: 86px;
@@ -4464,12 +4475,12 @@ h6 {
   text-transform: uppercase
 }
 .hero-1__text {
-  margin-bottom: 35px;
+  margin-bottom: 40px;
   max-width: 478px;
   line-height: normal
 }
 .hero-1__price {
-  margin-bottom: 46px;
+  margin-bottom: 50px;
   font-size: 26px;
   font-weight: 600;
   line-height: normal
@@ -4727,7 +4738,8 @@ h6 {
 .preview-product__price-icon {
   width: 24px;
   height: 24px;
-  color: rgba(255,255,255,.5)
+  color: rgba(255,255,255,.5);
+  fill: transparent
 }
 .preview-product__price-old {
   color: #868686;
@@ -4892,7 +4904,14 @@ h6 {
 }
 .static-hero__text-bottom svg {
   width: 14px;
-  height: 10px
+  height: 10px;
+  transition: -webkit-transform .3s ease;
+  transition: transform .3s ease;
+  transition: transform .3s ease,-webkit-transform .3s ease
+}
+.static-hero__text-bottom a:hover svg {
+  -webkit-transform: translateX(10px);
+  transform: translateX(10px)
 }
 .static-hero__media {
   width: 50%;
@@ -4903,8 +4922,7 @@ h6 {
 .static-hero__media-img {
   position: relative;
   top: -56px;
-  width: 100%;
-  height: auto
+  max-width: 100%
 }
 .advantages {
   position: relative;
@@ -4977,7 +4995,14 @@ h6 {
 }
 .advantages__item-text-link svg {
   width: 14px;
-  height: 10px
+  height: 10px;
+  transition: -webkit-transform .3s ease;
+  transition: transform .3s ease;
+  transition: transform .3s ease,-webkit-transform .3s ease
+}
+.advantages__item-text-link:hover svg {
+  -webkit-transform: translateX(10px);
+  transform: translateX(10px)
 }
 .advantages__item-text-content {
   color: rgba(255,255,255,.7);
@@ -5247,6 +5272,12 @@ h6 {
   }
   .footer__bottom-center {
     gap: 25px
+  }
+  .footer__bottom,
+  .footer__middle,
+  .footer__top {
+    padding-left: 0;
+    padding-right: 0
   }
   .hero-1__side-line {
     display: flex;
