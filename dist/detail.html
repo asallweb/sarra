@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>HomePage</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="css/style.min.css?_v=20250818153223">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap&_v=20250818153223" rel="stylesheet">
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header" data-animate-name="animate__fadeInDown">
+			<div class="__container">
+				<div class="header__wrapper">
+					<div class="header__menu menu">
+						<button type="button" class="menu__icon">
+							<div class="icon-menu"><span></span></div>
+							<div class="menu__icon-text">МЕНЮ</div>
+						</button>
+						<nav class="menu__body">
+							<div class="menu__body-inner">
+								<div class="menu__body-toggler _active">
+									<button class="menu__body-toggler-button _active" data-menu-list="catalog">Каталог</button>
+									<button class="menu__body-toggler-button" data-menu-list="customers">Покупателям</button>
+								</div>
+								<ul class="menu__list _active" id="catalog">
+									<li class="menu__item"><a href="" class="menu__link" data-show-submenu="submenu-1">Кресты</a></li>
+									<li class="menu__item"><a href="" class="menu__link">Подвески</a></li>
+									<li class="menu__item"><a href="" class="menu__link">Цепи</a></li>
+									<li class="menu__item"><a href="" class="menu__link">Шнурки</a></li>
+									<li class="menu__item"><a href="" class="menu__link">Кольца и перстни</a></li>
+									<li class="menu__item"><a href="" class="menu__link">Браслеты</a></li>
+									<li class="menu__item"><a href="" class="menu__link">Бусины</a></li>
+									<li class="menu__item"><a href="" class="menu__link">Серьги</a></li>
+									<li class="menu__item"><a href="" class="menu__link">Аксессуары</a></li>
+								</ul>
+								<ul class="menu__list" id="customers">
+									<li class="menu__item"><a href="" class="menu__link">Покупателям</a></li>
+									<li class="menu__item"><a href="" class="menu__link">О бренде</a></li>
+									<li class="menu__item"><a href="" class="menu__link">Новости</a></li>
+									<li class="menu__item"><a href="" class="menu__link">История</a></li>
+									<li class="menu__item"><a href="" class="menu__link">Шоурум в Москве</a></li>
+									<li class="menu__item"><a href="" class="menu__link">Контакты</a></li>
+								</ul>
+								<div class="menu__submenu" id="submenu-1">
+									<button class="menu__submenu-back">
+										<svg width="8" height="14">
+											<use xlink:href="img/icons/icons.svg#icon-arrow-2"></use>
+										</svg>
+										КРЕСТЫ
+									</button>
+									<a href="" class="menu__submenu-all">
+										Все изделия
+										<svg width="14" height="10">
+											<use xlink:href="img/icons/icons.svg#icon-arrow-1"></use>
+										</svg>
+									</a>
+									<a href="" class="menu__submenu-link">Серебряные</a>
+									<a href="" class="menu__submenu-link">Позолоченные</a>
+									<a href="" class="menu__submenu-link">Из дерева</a>
+								</div>
+							</div>
+						</nav>
+					</div>
+					<button class="header__catalog-btn">
+						<div class="header__catalog-btn-icon">
+							<div></div>
+						</div>
+						Каталог
+					</button>
+					<ul class="header__nav-list">
+						<li class="header__nav-item"><a href="" class="header__nav-link">О бренде</a></li>
+						<li class="header__nav-item"><a href="" class="header__nav-link">Покупателям</a></li>
+					</ul>
+					<a href="" class="header__logo-link">
+						<img src="img/logotypes/logo.svg" class="header__logo-img">
+					</a>
+					<ul class="header__nav-list">
+						<li class="header__nav-item"><a href="" class="header__nav-link">Шоурум в Москве</a></li>
+						<li class="header__nav-item"><a href="" class="header__nav-link">Контакты</a></li>
+					</ul>
+					<div class="header__tools">
+						<button class="header__tools-btn">
+							<svg>
+								<use xlink:href="img/icons/icons.svg#icon-search-1"></use>
+							</svg>
+						</button>
+						<button class="header__tools-btn">
+							<svg>
+								<use xlink:href="img/icons/icons.svg#icon-favorites-1"></use>
+							</svg>
+						</button>
+						<button class="header__tools-btn">
+							<svg>
+								<use xlink:href="img/icons/icons.svg#icon-basket-1"></use>
+							</svg>
+							<div class="header__tools-btn-count">3</div>
+						</button>
+					</div>
+				</div>
+			</div>
+			<div class="catalog-menu">
+				<div class="__container">
+					<div class="catalog-menu__wrapper">
+						<div class="catalog-menu__list-links">
+							<a href="#" class="catalog-menu__link _active" data-block="catalog-block-1">Кресты</a>
+							<a href="#" class="catalog-menu__link" data-block="catalog-block-2">Подвески</a>
+							<a href="#" class="catalog-menu__link" data-block="catalog-block-3">Цепи</a>
+							<a href="#" class="catalog-menu__link" data-block="catalog-block-4">Шнурки</a>
+							<a href="#" class="catalog-menu__link" data-block="catalog-block-5">Кольца и перстни</a>
+							<a href="#" class="catalog-menu__link" data-block="catalog-block-6">Браслеты</a>
+							<a href="#" class="catalog-menu__link" data-block="catalog-block-7">Бусины</a>
+							<a href="#" class="catalog-menu__link" data-block="catalog-block-8">Серьги</a>
+							<a href="#" class="catalog-menu__link" data-block="catalog-block-9">Аксессуары</a>
+						</div>
+						<div class="catalog-menu__list-blocks">
+							<div class="catalog-menu__block _active" data-blockId="catalog-block-1">
+								<div class="catalog-menu__block-side">
+									<a href="" class="catalog-menu__block-link _main">
+										Все изделия
+										<svg>
+											<use xlink:href="img/icons/icons.svg#icon-arrow-1"></use>
+										</svg>
+									</a>
+									<a href="" class="catalog-menu__block-link">Серебряные</a>
+									<a href="" class="catalog-menu__block-link">Позолоченные</a>
+									<a href="" class="catalog-menu__block-link _active">Из дерева</a>
+								</div>
+								<div class="catalog-menu__block-media">
+									<img src="img/content/catalog-menu-1.webp" class="">
+									<img src="img/content/catalog-menu-2.webp" class="">
+								</div>
+							</div>
+							<div class="catalog-menu__block" data-blockId="catalog-block-2">
+								<div class="catalog-menu__block-side">
+									<a href="" class="catalog-menu__block-link _main">
+										Все изделия
+										<svg>
+											<use xlink:href="img/icons/icons.svg#icon-arrow-1"></use>
+										</svg>
+									</a>
+									<a href="" class="catalog-menu__block-link">Позолоченные</a>
+									<a href="" class="catalog-menu__block-link">Серебряные</a>
+									<a href="" class="catalog-menu__block-link _active">Из дерева</a>
+								</div>
+								<div class="catalog-menu__block-media">
+									<img src="img/content/catalog-menu-2.webp" class="">
+									<img src="img/content/catalog-menu-1.webp" class="">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<main class="page">
+
+		</main>
+		<footer class="footer">
+			<div class="__container">
+				<div class="footer__wrapper">
+					<div class="footer__top">
+						<div class="footer__top-side _left">
+							<a href="tel:+7 (495) 741-15-48" class="footer__phone">+7 (495) 741-15-48</a>
+							<div class="footer__address">
+								<div>Фирменный салон:</div>
+								г. Москва, пер. Духовской, д.17
+							</div>
+						</div>
+						<div class="footer__top-center">
+							<a href="" class="footer__logo">
+								<img src="img/logotypes/logo.svg" class="footer__logo-img">
+							</a>
+						</div>
+						<div class="footer__top-side _right">
+							<button class="footer__up">
+								<div class="footer__up-icon"></div>
+								<div class="footer__up-text">НАВЕРХ</div>
+							</button>
+						</div>
+					</div>
+					<div class="footer__middle">
+						<div class="footer__middle-side">
+							<a href="" class="footer__menu-link">КАТАЛОГ</a>
+							<a href="" class="footer__menu-link _active">ПОКУПАТЕЛЯМ</a>
+							<a href="" class="footer__menu-link">О БРЕНДЕ</a>
+						</div>
+						<div class="footer__middle-separator"></div>
+						<div class="footer__middle-side">
+							<a href="" class="footer__menu-link">НОВОСТИ</a>
+							<a href="" class="footer__menu-link">ИСТОРИЯ</a>
+							<a href="" class="footer__menu-link">КОНТАКТЫ</a>
+						</div>
+					</div>
+					<div class="footer__bottom">
+						<div class="footer__bottom-side">© SARRA-SHOP. 2025.</div>
+						<div class="footer__bottom-center">
+							<img src="img/icons/payment-method-1.webp" class="">
+							<img src="img/icons/payment-method-2.webp" class="">
+							<img src="img/icons/payment-method-3.webp" class="">
+							<img src="img/icons/payment-method-4.webp" class="">
+						</div>
+						<div class="footer__bottom-side">
+							<a href="">Политика конфиденциальности</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+	<script src="js/app.min.js?_v=20250818153223"></script>
+</body>
+
+</html>

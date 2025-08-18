@@ -4197,6 +4197,43 @@
             }
         });
     });
+    document.addEventListener("DOMContentLoaded", function() {
+        const sliders = document.querySelectorAll(".product-slider");
+        sliders.forEach(slider => {
+            const tabs = Array.from(slider.querySelectorAll(".product-slider__tabs-item"));
+            const groups = Array.from(slider.querySelectorAll(".product-slider__body-group"));
+            if (!tabs.length || !groups.length) return;
+            tabs.forEach((tab, index) => {
+                tab.addEventListener("click", function() {
+                    groups.forEach(g => {
+                        g.querySelectorAll(".animated-preview-product").forEach(p => {
+                            p.classList.remove("_animated");
+                            const img = p.querySelector(".preview-product__image");
+                            const content = p.querySelector(".preview-product__content");
+                            if (img) img.style.setProperty("--animation-delay", "0ms");
+                            if (content) content.style.setProperty("animation-delay", "0ms");
+                        });
+                    });
+                    tabs.forEach(t => t.classList.remove("_active"));
+                    this.classList.add("_active");
+                    groups.forEach(g => g.classList.remove("_active"));
+                    if (groups[index]) groups[index].classList.add("_active");
+                    const activeGroup = groups[index];
+                    if (activeGroup) {
+                        const products = activeGroup.querySelectorAll(".animated-preview-product");
+                        products.forEach((p, i) => {
+                            const img = p.querySelector(".preview-product__image");
+                            const content = p.querySelector(".preview-product__content");
+                            if (img) img.style.setProperty("--animation-delay", `${i * 140}ms`);
+                            if (content) content.style.setProperty("animation-delay", `${i * 140}ms`);
+                        });
+                        void activeGroup.offsetWidth;
+                        products.forEach(p => p.classList.add("_animated"));
+                    }
+                });
+            });
+        });
+    });
     var x, i, j, l, ll, selElmnt, a, b, c;
     x = document.getElementsByClassName("custom-select");
     l = x.length;
@@ -4254,6 +4291,7 @@
         const rangeMin = document.getElementById("range-min");
         const rangeMax = document.getElementById("range-max");
         const trackFill = document.querySelector(".range-track-fill");
+        if (!minInput || !maxInput || !rangeMin || !rangeMax || !trackFill) return;
         const minGap = 1;
         const sliderMaxValue = parseInt(rangeMin.max);
         function updateTrackFill() {
