@@ -3722,8 +3722,9 @@
             observer: true,
             observeParents: true,
             slidesPerView: 4,
+            spaceBetween: 20,
             speed: 800,
-            loop: true,
+            loop: false,
             autoplay: {
                 delay: 3e3,
                 disableOnInteraction: true
@@ -3747,6 +3748,32 @@
     window.addEventListener("load", function(e) {
         initSliders();
     });
+    let swiperInstance;
+    function initSwiper() {
+        if (window.innerWidth < 1280) {
+            if (!swiperInstance && document.querySelector(".product-detail__slider")) swiperInstance = new swiper_core_Swiper(".product-detail__slider", {
+                modules: [ Navigation, Pagination ],
+                observer: true,
+                observeParents: true,
+                slidesPerView: "auto",
+                speed: 800,
+                loop: true,
+                navigation: {
+                    prevEl: ".product-detail__button-prev",
+                    nextEl: ".product-detail__button-next"
+                },
+                pagination: {
+                    el: ".product-detail__pagination",
+                    clickable: true
+                }
+            });
+        } else if (swiperInstance) {
+            swiperInstance.destroy(true, true);
+            swiperInstance = null;
+        }
+    }
+    window.addEventListener("load", initSwiper);
+    window.addEventListener("resize", initSwiper);
     let addWindowScrollEvent = false;
     setTimeout(() => {
         if (addWindowScrollEvent) {
@@ -4231,6 +4258,18 @@
                         products.forEach(p => p.classList.add("_animated"));
                     }
                 });
+            });
+        });
+    });
+    document.addEventListener("DOMContentLoaded", function() {
+        const details = document.querySelectorAll(".detail-product__description-detail");
+        details.forEach(detail => {
+            detail.addEventListener("click", function() {
+                const wrapper = this.closest(".detail-product__description-wrapper") || document.querySelector(".detail-product__description-wrapper");
+                if (wrapper) {
+                    wrapper.classList.add("_active");
+                    detail.classList.remove("_active");
+                }
             });
         });
     });
