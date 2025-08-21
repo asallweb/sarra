@@ -64,5 +64,12 @@
 		<path d="M5 19H2" stroke="#ED6F2D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 		<path d="M3 12H2" stroke="#ED6F2D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 	</symbol>
+	<symbol id="play-button" viewBox="0 0 75 75" fill="none" xmlns="http://www.w3.org/2000/svg">
+		<foreignObject x="-4" y="-4" width="83" height="83"><div xmlns="http://www.w3.org/1999/xhtml" style="backdrop-filter:blur(2px);clip-path:url(#bgblur_0_359_2244_clip_path);height:100%;width:100%"></div></foreignObject><circle data-figma-bg-blur-radius="4" cx="37.5" cy="37.5" r="37.5" fill="white" fill-opacity="0.8"/>
+		<path d="M45.75 35.5C47.0833 36.2698 47.0833 38.1943 45.75 38.9641L34.4732 45.4748C33.1399 46.2446 31.4732 45.2823 31.4732 43.7427L31.4732 30.7214C31.4732 29.1818 33.1399 28.2196 34.4732 28.9894L45.75 35.5Z" fill="#ED6F2D"/>
+		<defs>
+		<clipPath id="bgblur_0_359_2244_clip_path" transform="translate(4 4)"><circle cx="37.5" cy="37.5" r="37.5"/>
+		</clipPath></defs>
+	</symbol>
 
 </svg>

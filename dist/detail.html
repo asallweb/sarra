@@ -6,17 +6,122 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20250820144545">
+	<link rel="stylesheet" href="css/style.min.css?_v=20250821172059">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap&_v=20250820144545" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap&_v=20250821172059" rel="stylesheet">
 </head>
 
 <body>
 	<div class="wrapper">
+
+		<section class="preloader">
+			<style>
+				.preloader {
+					position: fixed;
+					left: 0;
+					top: 0;
+					width: 100vw;
+					height: 100vh;
+					background-color: #000;
+					z-index: 100;
+					transition: opacity 0.5s;
+				}
+
+				.preloader-logo {
+					position: absolute;
+					left: 50%;
+					top: 50%;
+					transform: translate(-50%, -50%);
+				}
+
+				.preloader-logo img {
+					width: 300px;
+					height: 112px;
+				}
+
+				.preloader-logo__white {
+					position: absolute;
+					left: 0;
+					top: 0;
+					width: 0;
+					height: 100%;
+					overflow: hidden;
+				}
+
+				.preloader-text {
+					position: absolute;
+					left: 50%;
+					transform: translateX(-50%);
+					bottom: 10vh;
+				}
+
+				@keyframes preloaderTextColor {
+					0% {
+						color: #fff;
+					}
+
+					50% {
+						color: #3d3d3d;
+					}
+
+					100% {
+						color: #fff;
+					}
+				}
+
+				.preloader-text {
+					animation: preloaderTextColor 1s infinite;
+				}
+			</style>
+			<div class="preloader-logo">
+				<img src="img/logotypes/logo-grey.svg" class="preloader-logo__grey">
+				<div class="preloader-logo__white">
+					<img src="img/logotypes/logo.svg" class="preloader-logo__white">
+				</div>
+			</div>
+			<div class="preloader-text">
+				ЗАГРУЗКА
+			</div>
+			<script>
+				document.addEventListener('DOMContentLoaded', function() {
+					var whiteLogo = document.querySelector('.preloader-logo__white');
+					var preloader = document.querySelector('.preloader');
+					var duration = 1800; // Длительность анимации в мс
+					var fadeDuration = 300; // Длительность исчезновения прелоадера
+					var start = null;
+
+					// Блокируем скролл
+					document.body.style.overflow = 'hidden';
+
+					function animateWidth(timestamp) {
+						if (!start) start = timestamp;
+						var progress = (timestamp - start) / duration;
+						if (progress > 1) progress = 1;
+						whiteLogo.style.width = (progress * 100) + '%';
+						if (progress < 1) {
+							requestAnimationFrame(animateWidth);
+						} else {
+							// Анимация завершена — убираем прелоадер
+							preloader.style.transition = 'opacity ' + (fadeDuration / 1000) + 's';
+							preloader.style.opacity = '0';
+							setTimeout(function() {
+								preloader.style.display = 'none';
+								document.body.style.overflow = '';
+								// Диспатчим событие о завершении прелоадера
+								window.dispatchEvent(new Event('preloader:done'));
+							}, fadeDuration);
+						}
+					}
+
+					requestAnimationFrame(animateWidth);
+				});
+			</script>
+		</section>
+
 		<header class="header" data-animate-name="animate__fadeInDown">
 			<div class="__container">
 				<div class="header__wrapper">
@@ -191,7 +296,14 @@
 									<img src="img/content/gallery-3.webp" class="product-detail__gallery-img">
 								</div>
 								<div class="product-detail__gallery-item product-detail__slide swiper-slide">
-									<img src="img/content/gallery-4.webp" class="product-detail__gallery-img">
+									<div class="product-detail__gallery-video">
+										<button class="play-button product-detail__play-button">
+											<svg width="75" height="75">
+												<use xlink:href="img/icons/icons.svg#play-button"></use>
+											</svg>
+										</button>
+										<video src="files/video/video-1.mp4" poster="img/content/gallery-4.webp" class="product-detail__gallery-img" autoplay loop></video>
+									</div>
 								</div>
 								<div class="product-detail__gallery-item product-detail__slide swiper-slide">
 									<img src="img/content/gallery-5.webp" class="product-detail__gallery-img">
@@ -211,92 +323,94 @@
 							<div class="product-detail__pagination"></div>
 						</div>
 						<div class="product-detail__body">
-							<div class="product-detail__articul">Артикул: 4556775</div>
-							<div class="product-detail__title">Название товара на сайте в несколько строк</div>
-							<div class="product-detail__description">
-								<div class="product-detail__description-wrapper">
-									Деревянный нательный крестик с распятием из серебра имеет символическое значение, особую значимость. Деревянная часть воспринимается как напоминание о Животворящем Кресте.
-									Деревянный нательный крестик с распятием из серебра имеет символическое значение, особую значимость. Деревянная часть воспринимается как напоминание о Животворящем Кресте.
-									Деревянный нательный крестик с распятием из серебра имеет символическое значение, особую значимость. Деревянная часть воспринимается как напоминание о Животворящем Кресте.
+							<div class="product-detail__body-inner">
+								<div class="product-detail__articul">Артикул: 4556775</div>
+								<div class="product-detail__title">Название товара на сайте в несколько строк</div>
+								<div class="product-detail__description">
+									<div class="product-detail__description-wrapper">
+										Деревянный нательный крестик с распятием из серебра имеет символическое значение, особую значимость. Деревянная часть воспринимается как напоминание о Животворящем Кресте.
+										Деревянный нательный крестик с распятием из серебра имеет символическое значение, особую значимость. Деревянная часть воспринимается как напоминание о Животворящем Кресте.
+										Деревянный нательный крестик с распятием из серебра имеет символическое значение, особую значимость. Деревянная часть воспринимается как напоминание о Животворящем Кресте.
+									</div>
+									<button class="product-detail__description-detail _active">Подробнее</button>
 								</div>
-								<button class="product-detail__description-detail _active">Подробнее</button>
-							</div>
-							<div class="product-detail__properties">
-								<div class="product-detail__properties-item">
-									<div class="product-detail__properties-item-row">
-										<div class="product-detail__properties-name">Проба</div>
-										<div class="product-detail__properties-value">999</div>
+								<div class="product-detail__properties">
+									<div class="product-detail__properties-item">
+										<div class="product-detail__properties-item-row">
+											<div class="product-detail__properties-name">Проба</div>
+											<div class="product-detail__properties-value">999</div>
+										</div>
+										<div class="product-detail__properties-item-row">
+											<div class="product-detail__properties-name">Металл</div>
+											<div class="product-detail__properties-value">Серебро</div>
+										</div>
 									</div>
-									<div class="product-detail__properties-item-row">
-										<div class="product-detail__properties-name">Металл</div>
-										<div class="product-detail__properties-value">Серебро</div>
-									</div>
-								</div>
-								<div class="product-detail__properties-item">
-									<div class="product-detail__properties-item-row">
-										<div class="product-detail__properties-name">Покрытие</div>
-										<div class="product-detail__properties-value">чернение</div>
-									</div>
-									<div class="product-detail__properties-item-row">
-										<div class="product-detail__properties-name">Средний вес</div>
-										<div class="product-detail__properties-value">63.7 г</div>
-									</div>
-								</div>
-							</div>
-							<div class="product-detail__options">
-								<div class="product-detail__options-item">
-									<div class="custom-select">
-										<select>
-											<option value="0">Выбрать размер</option>
-											<option value="1">40</option>
-											<option value="2">50</option>
-											<option value="3">60</option>
-										</select>
+									<div class="product-detail__properties-item">
+										<div class="product-detail__properties-item-row">
+											<div class="product-detail__properties-name">Покрытие</div>
+											<div class="product-detail__properties-value">чернение</div>
+										</div>
+										<div class="product-detail__properties-item-row">
+											<div class="product-detail__properties-name">Средний вес</div>
+											<div class="product-detail__properties-value">63.7 г</div>
+										</div>
 									</div>
 								</div>
-								<div class="product-detail__options-item">
-									<div class="custom-select">
-										<select>
-											<option value="0">Выбоать цвета металла</option>
-											<option value="1">Желтый</option>
-											<option value="2">Белый</option>
-											<option value="3">Серебро</option>
-										</select>
+								<div class="product-detail__options">
+									<div class="product-detail__options-item">
+										<div class="custom-select">
+											<select>
+												<option value="0">Выбрать размер</option>
+												<option value="1">40</option>
+												<option value="2">50</option>
+												<option value="3">60</option>
+											</select>
+										</div>
+									</div>
+									<div class="product-detail__options-item">
+										<div class="custom-select">
+											<select>
+												<option value="0">Выбоать цвета металла</option>
+												<option value="1">Желтый</option>
+												<option value="2">Белый</option>
+												<option value="3">Серебро</option>
+											</select>
+										</div>
 									</div>
 								</div>
-							</div>
-							<div class="product-detail__price">от 38 000 ₽ </div>
-							<div class="product-detail__tools">
-								<button class="product-detail__buy">
-									Купить
-									<div class="product-detail__buy-icon">
-										<svg width="24" height="24">
-											<use xlink:href="img/icons/icons.svg#icon-basket-3"></use>
+								<div class="product-detail__price">от 38 000 ₽ </div>
+								<div class="product-detail__tools">
+									<button class="product-detail__buy">
+										Купить
+										<div class="product-detail__buy-icon">
+											<svg width="24" height="24">
+												<use xlink:href="img/icons/icons.svg#icon-basket-3"></use>
+											</svg>
+										</div>
+									</button>
+									<button class="product-detail__wishlist">
+										<div class="product-detail__wishlist-icon">
+											<svg width="24" height="24">
+												<use xlink:href="img/icons/icons.svg#icon-favorites-1"></use>
+											</svg>
+										</div>
+										<div class="product-detail__wishlist-label">В избранное</div>
+									</button>
+								</div>
+								<div class="product-detail__footer">
+									<div class="product-detail__status">
+										<svg class="preview-product__price-icon">
+											<use xlink:href="img/icons/icons.svg#check-1"></use>
 										</svg>
+										Наличие в шоуруме
 									</div>
-								</button>
-								<button class="product-detail__wishlist">
-									<div class="product-detail__wishlist-icon">
-										<svg width="24" height="24">
-											<use xlink:href="img/icons/icons.svg#icon-favorites-1"></use>
+									<a href="" class="product-detail__share">
+										<svg class="preview-product__price-icon">
+											<use xlink:href="img/icons/icons.svg#share-1"></use>
 										</svg>
-									</div>
-									<div class="product-detail__wishlist-label">В избранное</div>
-								</button>
-							</div>
-							<div class="product-detail__footer">
-								<div class="product-detail__status">
-									<svg class="preview-product__price-icon">
-										<use xlink:href="img/icons/icons.svg#check-1"></use>
-									</svg>
-									Наличие в шоуруме
+										Поделиться
+									</a>
 								</div>
-								<a href="" class="product-detail__share">
-									<svg class="preview-product__price-icon">
-										<use xlink:href="img/icons/icons.svg#share-1"></use>
-									</svg>
-									Поделиться
-								</a>
 							</div>
 						</div>
 					</div>
@@ -400,7 +514,9 @@
 												<div class="preview-product__price-old">65 000 ₽</div>
 											</div>
 											<button class="preview-product__wishlist">
-												<div class="preview-product__wishlist-icon"></div>
+												<div class="preview-product__wishlist-icon"><svg width="24" height="24">
+														<use xlink:href="img/icons/icons.svg#icon-favorites-1"></use>
+													</svg></div>
 												<div class="preview-product__wishlist-label">В избранное</div>
 											</button>
 										</div>
@@ -424,8 +540,10 @@
 													150 000 ₽
 												</div>
 											</div>
-											<button class="preview-product__wishlist">
-												<div class="preview-product__wishlist-icon"></div>
+											<button class="preview-product__wishlist _active">
+												<div class="preview-product__wishlist-icon"><svg width="24" height="24">
+														<use xlink:href="img/icons/icons.svg#icon-favorites-1"></use>
+													</svg></div>
 												<div class="preview-product__wishlist-label">В избранное</div>
 											</button>
 										</div>
@@ -455,7 +573,9 @@
 												</div>
 											</div>
 											<button class="preview-product__wishlist">
-												<div class="preview-product__wishlist-icon"></div>
+												<div class="preview-product__wishlist-icon"><svg width="24" height="24">
+														<use xlink:href="img/icons/icons.svg#icon-favorites-1"></use>
+													</svg></div>
 												<div class="preview-product__wishlist-label">В избранное</div>
 											</button>
 										</div>
@@ -485,7 +605,9 @@
 												</div>
 											</div>
 											<button class="preview-product__wishlist">
-												<div class="preview-product__wishlist-icon"></div>
+												<div class="preview-product__wishlist-icon"><svg width="24" height="24">
+														<use xlink:href="img/icons/icons.svg#icon-favorites-1"></use>
+													</svg></div>
 												<div class="preview-product__wishlist-label">В избранное</div>
 											</button>
 										</div>
@@ -722,7 +844,9 @@
 												<div class="preview-product__price-old">65 000 ₽</div>
 											</div>
 											<button class="preview-product__wishlist">
-												<div class="preview-product__wishlist-icon"></div>
+												<div class="preview-product__wishlist-icon"><svg width="24" height="24">
+														<use xlink:href="img/icons/icons.svg#icon-favorites-1"></use>
+													</svg></div>
 												<div class="preview-product__wishlist-label">В избранное</div>
 											</button>
 										</div>
@@ -746,8 +870,10 @@
 													150 000 ₽
 												</div>
 											</div>
-											<button class="preview-product__wishlist">
-												<div class="preview-product__wishlist-icon"></div>
+											<button class="preview-product__wishlist _active">
+												<div class="preview-product__wishlist-icon"><svg width="24" height="24">
+														<use xlink:href="img/icons/icons.svg#icon-favorites-1"></use>
+													</svg></div>
 												<div class="preview-product__wishlist-label">В избранное</div>
 											</button>
 										</div>
@@ -777,7 +903,9 @@
 												</div>
 											</div>
 											<button class="preview-product__wishlist">
-												<div class="preview-product__wishlist-icon"></div>
+												<div class="preview-product__wishlist-icon"><svg width="24" height="24">
+														<use xlink:href="img/icons/icons.svg#icon-favorites-1"></use>
+													</svg></div>
 												<div class="preview-product__wishlist-label">В избранное</div>
 											</button>
 										</div>
@@ -807,7 +935,9 @@
 												</div>
 											</div>
 											<button class="preview-product__wishlist">
-												<div class="preview-product__wishlist-icon"></div>
+												<div class="preview-product__wishlist-icon"><svg width="24" height="24">
+														<use xlink:href="img/icons/icons.svg#icon-favorites-1"></use>
+													</svg></div>
 												<div class="preview-product__wishlist-label">В избранное</div>
 											</button>
 										</div>
@@ -1099,7 +1229,7 @@
 			</div>
 		</footer>
 	</div>
-	<script src="js/app.min.js?_v=20250820144545"></script>
+	<script src="js/app.min.js?_v=20250821172059"></script>
 </body>
 
 </html>

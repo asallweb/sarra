@@ -3717,6 +3717,24 @@
                 nextEl: ".hero-1__button-next"
             }
         });
+        if (document.querySelector(".preview-product__slider")) new swiper_core_Swiper(".preview-product__slider", {
+            modules: [ Pagination ],
+            observer: true,
+            observeParents: true,
+            slidesPerView: 1,
+            spaceBetween: 0,
+            autoHeight: true,
+            speed: 800,
+            loop: true,
+            autoplay: {
+                delay: 1e3,
+                disableOnInteraction: false
+            },
+            pagination: {
+                el: ".preview-product__pagination",
+                clickable: true
+            }
+        });
         if (document.querySelector(".product-slider__slider")) new swiper_core_Swiper(".product-slider__slider", {
             modules: [ Navigation ],
             observer: true,
@@ -4262,15 +4280,60 @@
         });
     });
     document.addEventListener("DOMContentLoaded", function() {
-        const details = document.querySelectorAll(".detail-product__description-detail");
+        const details = document.querySelectorAll(".product-detail__description-detail");
         details.forEach(detail => {
             detail.addEventListener("click", function() {
-                const wrapper = this.closest(".detail-product__description-wrapper") || document.querySelector(".detail-product__description-wrapper");
+                const wrapper = this.closest(".product-detail__description-wrapper") || document.querySelector(".product-detail__description-wrapper");
                 if (wrapper) {
                     wrapper.classList.add("_active");
                     detail.classList.remove("_active");
                 }
             });
+        });
+    });
+    document.addEventListener("DOMContentLoaded", function() {
+        const playButtons = document.querySelectorAll(".product-detail__play-button");
+        if (!playButtons.length) return;
+        playButtons.forEach(button => {
+            button.addEventListener("click", function(e) {
+                e.preventDefault();
+                const container = this.closest(".product-detail__gallery-video") || this.parentElement;
+                if (!container) return;
+                const video = container.querySelector("video, .product-detail__gallery-img");
+                if (!(video instanceof HTMLVideoElement)) return;
+                if (video.paused) {
+                    const playPromise = video.play();
+                    if (playPromise && typeof playPromise.then === "function") playPromise.catch(() => {});
+                    container.classList.add("_playing");
+                    this.classList.add("_active");
+                    this.setAttribute("aria-pressed", "true");
+                } else {
+                    video.pause();
+                    container.classList.remove("_playing");
+                    this.classList.remove("_active");
+                    this.setAttribute("aria-pressed", "false");
+                }
+            });
+        });
+        const containers = document.querySelectorAll(".product-detail__gallery-video");
+        containers.forEach(container => {
+            const button = container.querySelector(".product-detail__play-button");
+            const video = container.querySelector("video, .product-detail__gallery-img");
+            if (!(button && video instanceof HTMLVideoElement)) return;
+            function syncState() {
+                if (video.paused) {
+                    container.classList.remove("_playing");
+                    button.classList.remove("_active");
+                    button.setAttribute("aria-pressed", "false");
+                } else {
+                    container.classList.add("_playing");
+                    button.classList.add("_active");
+                    button.setAttribute("aria-pressed", "true");
+                }
+            }
+            video.addEventListener("play", syncState);
+            video.addEventListener("pause", syncState);
+            syncState();
         });
     });
     var x, i, j, l, ll, selElmnt, a, b, c;
