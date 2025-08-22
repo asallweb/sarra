@@ -30,10 +30,6 @@
       </clipPath>
     </defs>
   </symbol>
-	<symbol id="icon-play-1" viewBox="0 0 35 35" fill="none">
-		<circle cx="17.5" cy="17.5" r="17.5" fill="white"/>
-		<path d="M22.5 16.634C23.1667 17.0189 23.1667 17.9811 22.5 18.366L15.75 22.2631C15.0833 22.648 14.25 22.1669 14.25 21.3971L14.25 13.6029C14.25 12.8331 15.0833 12.352 15.75 12.7369L22.5 16.634Z" fill="#ED6F2D"/>
-	</symbol>
 	<symbol id="icon-arrow-1" viewBox="0 0 13 8" fill="none">
 		<path d="M12.3536 4.35355C12.5488 4.15829 12.5488 3.84171 12.3536 3.64645L9.17157 0.464466C8.97631 0.269204 8.65973 0.269204 8.46447 0.464466C8.2692 0.659728 8.2692 0.976311 8.46447 1.17157L11.2929 4L8.46447 6.82843C8.2692 7.02369 8.2692 7.34027 8.46447 7.53553C8.65973 7.7308 8.97631 7.7308 9.17157 7.53553L12.3536 4.35355ZM0 4V4.5H12V4V3.5H0V4Z" fill="currentColor"/>
 	</symbol>
@@ -70,6 +66,13 @@
 		<defs>
 		<clipPath id="bgblur_0_359_2244_clip_path" transform="translate(4 4)"><circle cx="37.5" cy="37.5" r="37.5"/>
 		</clipPath></defs>
+	</symbol>
+	<symbol id="icon-play" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+		<path d="M14.75 7.50009C16.0833 8.26989 16.0833 10.1944 14.75 10.9642L3.47321 17.4748C2.13988 18.2446 0.473212 17.2824 0.473212 15.7428L0.473213 2.72148C0.473213 1.18188 2.13988 0.219629 3.47321 0.98943L14.75 7.50009Z" fill="currentColor"/>
+	</symbol>
+	<symbol id="icon-paused" viewBox="0 0 14 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+		<rect width="5" height="17" rx="2" fill="white"/>
+		<rect x="9" width="5" height="17" rx="2" fill="white"/>
 	</symbol>
 
 </svg>

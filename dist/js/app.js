@@ -3694,6 +3694,8 @@
             })
         });
     }
+    window.Swiper = swiper_core_Swiper;
+    window.Pagination = Pagination;
     function initSliders() {
         if (document.querySelector(".hero-1__slider")) new swiper_core_Swiper(".hero-1__slider", {
             modules: [ Navigation, Pagination, EffectFade ],
@@ -3715,24 +3717,6 @@
             navigation: {
                 prevEl: ".hero-1__button-prev",
                 nextEl: ".hero-1__button-next"
-            }
-        });
-        if (document.querySelector(".preview-product__slider")) new swiper_core_Swiper(".preview-product__slider", {
-            modules: [ Pagination ],
-            observer: true,
-            observeParents: true,
-            slidesPerView: 1,
-            spaceBetween: 0,
-            autoHeight: true,
-            speed: 800,
-            loop: true,
-            autoplay: {
-                delay: 1e3,
-                disableOnInteraction: false
-            },
-            pagination: {
-                el: ".preview-product__pagination",
-                clickable: true
             }
         });
         if (document.querySelector(".product-slider__slider")) new swiper_core_Swiper(".product-slider__slider", {
@@ -4292,25 +4276,25 @@
         });
     });
     document.addEventListener("DOMContentLoaded", function() {
-        const playButtons = document.querySelectorAll(".product-detail__play-button");
+        const playButtons = document.querySelectorAll(".play-button");
         if (!playButtons.length) return;
         playButtons.forEach(button => {
             button.addEventListener("click", function(e) {
                 e.preventDefault();
-                const container = this.closest(".product-detail__gallery-video") || this.parentElement;
+                const container = this.closest(".video-file__wrapper") || this.parentElement;
                 if (!container) return;
-                const video = container.querySelector("video, .product-detail__gallery-img");
+                const video = container.querySelector("video, .video-file");
                 if (!(video instanceof HTMLVideoElement)) return;
                 if (video.paused) {
                     const playPromise = video.play();
                     if (playPromise && typeof playPromise.then === "function") playPromise.catch(() => {});
                     container.classList.add("_playing");
-                    this.classList.add("_active");
+                    this.classList.remove("_paused");
                     this.setAttribute("aria-pressed", "true");
                 } else {
                     video.pause();
                     container.classList.remove("_playing");
-                    this.classList.remove("_active");
+                    this.classList.add("_paused");
                     this.setAttribute("aria-pressed", "false");
                 }
             });
@@ -4323,11 +4307,11 @@
             function syncState() {
                 if (video.paused) {
                     container.classList.remove("_playing");
-                    button.classList.remove("_active");
+                    button.classList.add("_paused");
                     button.setAttribute("aria-pressed", "false");
                 } else {
                     container.classList.add("_playing");
-                    button.classList.add("_active");
+                    button.classList.remove("_paused");
                     button.setAttribute("aria-pressed", "true");
                 }
             }

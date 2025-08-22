@@ -6,13 +6,13 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20250821172059">
+	<link rel="stylesheet" href="css/style.min.css?_v=20250822141417">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap&_v=20250821172059" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap&_v=20250822141417" rel="stylesheet">
 </head>
 
 <body>
@@ -296,13 +296,16 @@
 									<img src="img/content/gallery-3.webp" class="product-detail__gallery-img">
 								</div>
 								<div class="product-detail__gallery-item product-detail__slide swiper-slide">
-									<div class="product-detail__gallery-video">
+									<div class="product-detail__gallery-video video-file__wrapper">
 										<button class="play-button product-detail__play-button">
-											<svg width="75" height="75">
-												<use xlink:href="img/icons/icons.svg#play-button"></use>
+											<svg class="_playing">
+												<use xlink:href="img/icons/icons.svg#icon-play"></use>
+											</svg>
+											<svg class="_paused">
+												<use xlink:href="img/icons/icons.svg#icon-paused"></use>
 											</svg>
 										</button>
-										<video src="files/video/video-1.mp4" poster="img/content/gallery-4.webp" class="product-detail__gallery-img" autoplay loop></video>
+										<video src="files/video/video-1.mp4" poster="img/content/gallery-4.webp" class="product-detail__gallery-img video-file" autoplay loop></video>
 									</div>
 								</div>
 								<div class="product-detail__gallery-item product-detail__slide swiper-slide">
@@ -553,9 +556,12 @@
 							<div class="product-slider__slide swiper-slide">
 								<div class="preview-product animated-preview-product">
 									<a href="" class="preview-product__image">
-										<button class="preview-product__promo-media">
-											<svg class="preview-product__price-icon">
-												<use xlink:href="img/icons/icons.svg#icon-play-1"></use>
+										<button class="play-button _small preview-product__promo-media">
+											<svg class="_playing">
+												<use xlink:href="img/icons/icons.svg#icon-play"></use>
+											</svg>
+											<svg class="_paused">
+												<use xlink:href="img/icons/icons.svg#icon-paused"></use>
 											</svg>
 										</button>
 										<img src="img/content/preview-product-16.webp" class="preview-product__img">
@@ -585,9 +591,12 @@
 							<div class="product-slider__slide swiper-slide">
 								<div class="preview-product animated-preview-product">
 									<a href="" class="preview-product__image">
-										<button class="preview-product__promo-media">
-											<svg class="preview-product__price-icon">
-												<use xlink:href="img/icons/icons.svg#icon-play-1"></use>
+										<button class="play-button _small preview-product__promo-media">
+											<svg class="_playing">
+												<use xlink:href="img/icons/icons.svg#icon-play"></use>
+											</svg>
+											<svg class="_paused">
+												<use xlink:href="img/icons/icons.svg#icon-paused"></use>
 											</svg>
 										</button>
 										<img src="img/content/preview-product-17.webp" class="preview-product__img">
@@ -883,9 +892,12 @@
 							<div class="product-slider__slide swiper-slide">
 								<div class="preview-product animated-preview-product">
 									<a href="" class="preview-product__image">
-										<button class="preview-product__promo-media">
-											<svg class="preview-product__price-icon">
-												<use xlink:href="img/icons/icons.svg#icon-play-1"></use>
+										<button class="play-button _small preview-product__promo-media">
+											<svg class="_playing">
+												<use xlink:href="img/icons/icons.svg#icon-play"></use>
+											</svg>
+											<svg class="_paused">
+												<use xlink:href="img/icons/icons.svg#icon-paused"></use>
 											</svg>
 										</button>
 										<img src="img/content/preview-product-16.webp" class="preview-product__img">
@@ -915,9 +927,12 @@
 							<div class="product-slider__slide swiper-slide">
 								<div class="preview-product animated-preview-product">
 									<a href="" class="preview-product__image">
-										<button class="preview-product__promo-media">
-											<svg class="preview-product__price-icon">
-												<use xlink:href="img/icons/icons.svg#icon-play-1"></use>
+										<button class="play-button _small preview-product__promo-media">
+											<svg class="_playing">
+												<use xlink:href="img/icons/icons.svg#icon-play"></use>
+											</svg>
+											<svg class="_paused">
+												<use xlink:href="img/icons/icons.svg#icon-paused"></use>
 											</svg>
 										</button>
 										<img src="img/content/preview-product-17.webp" class="preview-product__img">
@@ -1229,7 +1244,7 @@
 			</div>
 		</footer>
 	</div>
-	<script src="js/app.min.js?_v=20250821172059"></script>
+	<script src="js/app.min.js?_v=20250822141417"></script>
 </body>
 
 </html>

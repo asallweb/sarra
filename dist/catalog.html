@@ -6,13 +6,13 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20250821172059">
+	<link rel="stylesheet" href="css/style.min.css?_v=20250822141417">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap&_v=20250821172059" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap&_v=20250822141417" rel="stylesheet">
 </head>
 
 <body>
@@ -458,6 +458,30 @@
 											</div>
 											<div class="preview-product__pagination"></div>
 										</div>
+										<script>
+											window.addEventListener("load", function(e) {
+												if (document.querySelector('.preview-product__slider')) {
+													new Swiper('.preview-product__slider', {
+														modules: [Pagination],
+														observer: true,
+														observeParents: true,
+														slidesPerView: 1,
+														spaceBetween: 0,
+														autoHeight: true,
+														speed: 800,
+														loop: true,
+														autoplay: {
+															delay: 1000,
+															disableOnInteraction: false,
+														},
+														pagination: {
+															el: '.preview-product__pagination',
+															clickable: true,
+														},
+													});
+												}
+											});
+										</script>
 									</a>
 									<div class="preview-product__content">
 										<a href="" class="preview-product__category">Серебро / Позолота</a>
@@ -482,12 +506,31 @@
 								</div>
 								<div class="preview-product animated-preview-product">
 									<a href="" class="preview-product__image">
-										<button class="preview-product__promo-media">
-											<svg class="preview-product__price-icon">
-												<use xlink:href="img/icons/icons.svg#icon-play-1"></use>
+										<button class="play-button _small preview-product__promo-media">
+											<svg class="_playing">
+												<use xlink:href="img/icons/icons.svg#icon-play"></use>
+											</svg>
+											<svg class="_paused">
+												<use xlink:href="img/icons/icons.svg#icon-paused"></use>
 											</svg>
 										</button>
-										<img src="img/content/preview-product-3.webp" class="preview-product__img">
+										<div class="preview-product__slider swiper">
+											<div class="preview-product__slider-wrapper swiper-wrapper">
+												<div class="preview-product__slider-slide swiper-slide">
+													<img src="img/content/preview-product-1.webp" class="preview-product__img">
+												</div>
+												<div class="preview-product__slider-slide swiper-slide">
+													<img src="img/content/preview-product-2.webp" class="preview-product__img">
+												</div>
+												<div class="preview-product__slider-slide swiper-slide">
+													<img src="img/content/preview-product-3.webp" class="preview-product__img">
+												</div>
+											</div>
+											<div class="preview-product__pagination"></div>
+										</div>
+										<div class="preview-product__video">
+											<video src="files/video/video-1.mp4" poster="img/content/gallery-4.webp" class="product-detail__gallery-img" autoplay loop></video>
+										</div>
 									</a>
 									<div class="preview-product__content">
 										<a href="" class="preview-product__category">Серебро / Позолота</a>
@@ -729,7 +772,7 @@
 			</div>
 		</footer>
 	</div>
-	<script src="js/app.min.js?_v=20250821172059"></script>
+	<script src="js/app.min.js?_v=20250822141417"></script>
 </body>
 
 </html>
