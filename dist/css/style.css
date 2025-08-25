@@ -4335,13 +4335,13 @@ h6 {
 }
 .fog-2 div::before,
 .fog-2::before {
-  background-image: url(../img/backgrounds/hero-1__middle-2.webp);
+  background-image: url(../img/backgrounds/hero-1__middle.webp);
   -webkit-animation: fogmove 60s linear 0s infinite;
   animation: fogmove 60s linear 0s infinite
 }
 .fog-2 div::after,
 .fog-2::after {
-  background-image: url(../img/backgrounds/hero-1__middle-2.webp);
+  background-image: url(../img/backgrounds/hero-1__middle.webp);
   -webkit-animation: fogmove 30s linear 0s infinite;
   animation: fogmove 30s linear 0s infinite
 }
@@ -6369,6 +6369,12 @@ h6 {
     height: auto
   }
 }
+@media (max-width:1500px) {
+  .fog,
+  .fog-2 {
+    width: 200vw
+  }
+}
 @media (max-width:1279px) {
   .menu__body {
     position: fixed;
@@ -7238,6 +7244,18 @@ h6 {
   }
   .menu__submenu-link {
     font-size: 18px
+  }
+  .fog,
+  .fog-2 {
+    width: 400vw
+  }
+  .fog-2 div::before,
+  .fog-2::before {
+    background-image: url(../img/backgrounds/hero-1__middle-mob.webp)
+  }
+  .fog-2 div::after,
+  .fog-2::after {
+    background-image: url(../img/backgrounds/hero-1__middle-mob.webp)
   }
 }
 @media print,
