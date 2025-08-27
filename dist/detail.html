@@ -6,13 +6,13 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20250825154145">
+	<link rel="stylesheet" href="css/style.min.css?_v=20250827170859">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap&_v=20250825154145" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap&_v=20250827170859" rel="stylesheet">
 </head>
 
 <body>
@@ -193,7 +193,7 @@
 						<li class="header__nav-item"><a href="" class="header__nav-link">Контакты</a></li>
 					</ul>
 					<div class="header__tools">
-						<button class="header__tools-btn">
+						<button class="header__tools-btn" open-search-popup>
 							<svg>
 								<use xlink:href="img/icons/icons.svg#icon-search-1"></use>
 							</svg>
@@ -266,6 +266,121 @@
 				</div>
 			</div>
 		</header>
+		<section class="search-popup">
+			<button class="search-popup__close">
+				<svg width="45" height="45">
+					<use xlink:href="img/icons/icons.svg#close-2"></use>
+				</svg>
+			</button>
+			<div class="search-popup__wrapper">
+				<div class="search-popup__title">ПОИСК</div>
+				<div class="search-popup__search">
+					<div class="search-popup__search-field">
+						<input type="text" placeholder="Что будем искать" class="search-popup__search-input">
+						<button class="search-popup__search-clear">
+							<svg>
+								<use xlink:href="img/icons/icons.svg#close-3"></use>
+							</svg>
+						</button>
+						<button class="search-popup__search-submit">
+							<svg>
+								<use xlink:href="img/icons/icons.svg#icon-search-1"></use>
+							</svg>
+						</button>
+					</div>
+				</div>
+				<div class="search-popup__searching">
+					<div class="search-popup__searching-title">Часто ищут</div>
+					<div class="search-popup__searching-list">
+						<a href="" class="search-popup__searching-link">Крестты</a>
+						<a href="" class="search-popup__searching-link">Подвески</a>
+						<a href="" class="search-popup__searching-link">Кольца и перстни</a>
+						<a href="" class="search-popup__searching-link">Цепи</a>
+						<a href="" class="search-popup__searching-link">Шнурки</a>
+						<a href="" class="search-popup__searching-link">Браслеты</a>
+						<a href="" class="search-popup__searching-link">Бусины</a>
+						<a href="" class="search-popup__searching-link">Серьги</a>
+					</div>
+				</div>
+				<div class="search-popup__not-found">
+					По вашему запросу ничего не найдено(
+				</div>
+				<div class="search-popup__results">
+					<div class="search-popup__results-title">Результаты поиска</div>
+					<div class="search-popup__results-list">
+						<div class="product-line">
+							<a href="" class="product-line__image">
+								<img src="img/content/product-line-1.webp" class="product-line__img">
+							</a>
+							<div class="product-line__content">
+								<div class="product-line__category">Серебро</div>
+								<a href="" class="product-line__title">Название товара на сайте в две строки</a>
+								<div class="product-line__price">516 000 ₽ </div>
+							</div>
+						</div>
+						<div class="product-line">
+							<a href="" class="product-line__image">
+								<img src="img/content/product-line-2.webp" class="product-line__img">
+							</a>
+							<div class="product-line__content">
+								<div class="product-line__category">Серебро</div>
+								<a href="" class="product-line__title">Еще одно название товара на сайте</a>
+								<div class="product-line__price">51 000 ₽ </div>
+							</div>
+						</div>
+						<div class="product-line">
+							<a href="" class="product-line__image">
+								<img src="img/content/product-line-3.webp" class="product-line__img">
+							</a>
+							<div class="product-line__content">
+								<div class="product-line__category">Серебро</div>
+								<a href="" class="product-line__title">Название товара на сайте в две строки</a>
+								<div class="product-line__price">516 000 ₽ </div>
+							</div>
+						</div>
+					</div>
+					<div class="search-popup__all-results-wrapper">
+						<a href="" class="search-popup__all-results">
+							Все результаты (20)
+							<svg>
+								<use xlink:href="img/icons/icons.svg#icon-arrow-1"></use>
+							</svg>
+						</a>
+					</div>
+				</div>
+			</div>
+			<script>
+				(function() {
+					const section = document.querySelector('.search-popup');
+					if (!section) return;
+
+					const input = section.querySelector('.search-popup__search-input');
+					const clearBtn = section.querySelector('.search-popup__search-clear');
+					if (!input || !clearBtn) return;
+
+					function toggleClear() {
+						const hasValue = input.value.trim().length > 0;
+						clearBtn.hidden = !hasValue;
+					}
+
+					// Начальное состояние
+					toggleClear();
+
+					// Показывать/скрывать при вводе
+					input.addEventListener('input', toggleClear);
+
+					// Очистка по клику
+					clearBtn.addEventListener('click', function(e) {
+						e.preventDefault();
+						input.value = '';
+						input.dispatchEvent(new Event('input', {
+							bubbles: true
+						}));
+						input.focus();
+					});
+				})();
+			</script>
+		</section>
 		<main class="page">
 			<section class="top-background">
 				<img src="img/backgrounds/main-1.webp">
@@ -1244,7 +1359,7 @@
 			</div>
 		</footer>
 	</div>
-	<script src="js/app.min.js?_v=20250825154145"></script>
+	<script src="js/app.min.js?_v=20250827170859"></script>
 </body>
 
 </html>

@@ -47,6 +47,16 @@
 		<line x1="1.04" y1="22.2529" x2="22.2532" y2="1.03969" stroke="#ED6F2D"/>
 		<line y1="-0.5" x2="30" y2="-0.5" transform="matrix(-0.707107 -0.707107 -0.707107 0.707107 22.6069 22.6064)" stroke="#ED6F2D"/>
 	</symbol>
+	<symbol id="close-2" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+		<rect width="45" height="45" rx="22.5" fill="#ECECEC"/>
+		<path d="M17 29L29 17" stroke="#200E32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+		<path d="M29 29L17 17" stroke="#200E32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+	</symbol>
+	<symbol id="close-3" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+		<path d="M1 13L13 1" stroke="white" stroke-opacity="0.5" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+		<path d="M13 13L1 1" stroke="white" stroke-opacity="0.5" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+	</symbol>
+
 	<symbol id="check-1" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
 		<circle cx="6.5" cy="6.5" r="6.5" fill="#3AB50E"/>
 		<path d="M4 6.54231L5.63385 8L9 5" stroke="white" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>

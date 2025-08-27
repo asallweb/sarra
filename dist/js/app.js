@@ -4320,6 +4320,42 @@
             syncState();
         });
     });
+    document.addEventListener("DOMContentLoaded", () => {
+        const popup = document.querySelector(".search-popup");
+        if (!popup) return;
+        const openBtns = document.querySelectorAll("[open-search-popup]");
+        const closeBtn = popup.querySelector(".search-popup__close");
+        const lockScroll = () => {
+            document.body.style.overflow = "hidden";
+        };
+        const unlockScroll = () => {
+            document.body.style.overflow = "";
+        };
+        const openPopup = () => {
+            popup.classList.add("_active");
+            lockScroll();
+        };
+        const closePopup = () => {
+            popup.classList.remove("_active");
+            unlockScroll();
+        };
+        openBtns.forEach(btn => {
+            btn.addEventListener("click", e => {
+                e.preventDefault();
+                openPopup();
+            });
+        });
+        if (closeBtn) closeBtn.addEventListener("click", e => {
+            e.preventDefault();
+            closePopup();
+        });
+        popup.addEventListener("click", e => {
+            if (e.target === popup) closePopup();
+        });
+        document.addEventListener("keydown", e => {
+            if (e.key === "Escape" && popup.classList.contains("_active")) closePopup();
+        });
+    });
     var x, i, j, l, ll, selElmnt, a, b, c;
     x = document.getElementsByClassName("custom-select");
     l = x.length;
