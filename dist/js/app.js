@@ -4162,6 +4162,14 @@
                 navigation: {
                     prevEl: ".product-gallery__button-prev",
                     nextEl: ".product-gallery__button-next"
+                },
+                breakpoints: {
+                    0: {
+                        direction: "horizontal"
+                    },
+                    1080: {
+                        direction: "vertical"
+                    }
                 }
             });
             const mainSwiper = new swiper_core_Swiper(".product-gallery__gallery", {
@@ -4169,7 +4177,7 @@
                 observer: true,
                 observeParents: true,
                 slidesPerView: 1,
-                spaceBetween: 0,
+                spaceBetween: 10,
                 speed: 600,
                 loop: false,
                 thumbs: {
@@ -4185,6 +4193,8 @@
                 thumbsSwiper.slideTo(idx, 300);
             });
             thumbsSwiper.slideTo(mainSwiper.realIndex, 0);
+            window.productGalleryMainSwiper = mainSwiper;
+            window.productGalleryThumbsSwiper = thumbsSwiper;
         }
     }
     window.addEventListener("load", function(e) {
@@ -4801,6 +4811,52 @@
         if (!popup) return;
         const openBtns = document.querySelectorAll("[open-product-gallery]");
         const closeBtn = popup.querySelector(".product-gallery__close");
+        let __pgTargetIndex = 0;
+        document.addEventListener("click", e => {
+            const trigger = e.target.closest("[open-product-gallery]");
+            if (!trigger) return;
+            let idx = 0;
+            const slideEl = trigger.closest(".product-detail__slide") || trigger.closest(".swiper-slide");
+            if (slideEl) {
+                const dataIdx = slideEl.getAttribute("data-swiper-slide-index");
+                if (dataIdx !== null && dataIdx !== void 0 && dataIdx !== "") {
+                    const parsed = parseInt(dataIdx, 10);
+                    if (!Number.isNaN(parsed) && parsed >= 0) idx = parsed;
+                } else if (slideEl.parentElement) {
+                    const slides = Array.from(slideEl.parentElement.children).filter(el => el.classList.contains("swiper-slide") && !el.classList.contains("swiper-slide-duplicate"));
+                    const pos = slides.indexOf(slideEl);
+                    if (pos >= 0) idx = pos;
+                }
+            }
+            (function resolveIndexByMedia() {
+                function getFileName(path) {
+                    if (!path) return "";
+                    try {
+                        const clean = String(path).split("?")[0].split("#")[0];
+                        return clean.substring(clean.lastIndexOf("/") + 1);
+                    } catch (_) {
+                        return "";
+                    }
+                }
+                let mediaSrc = "";
+                if (trigger instanceof HTMLImageElement) mediaSrc = trigger.getAttribute("src") || ""; else if (trigger instanceof HTMLVideoElement) mediaSrc = trigger.getAttribute("poster") || "";
+                if (!mediaSrc && slideEl) {
+                    const img = slideEl.querySelector("img");
+                    const vid = slideEl.querySelector("video");
+                    mediaSrc = vid && (vid.getAttribute("poster") || "") || img && (img.getAttribute("src") || "") || "";
+                }
+                const needle = getFileName(mediaSrc);
+                if (needle) {
+                    const popupSlidesMedia = Array.from(document.querySelectorAll(".product-gallery__gallery .swiper-slide img, .product-gallery__gallery .swiper-slide video"));
+                    const foundIdx = popupSlidesMedia.findIndex(el => {
+                        const src = el instanceof HTMLVideoElement ? el.getAttribute("poster") : el.getAttribute("src");
+                        return getFileName(src || "") === needle;
+                    });
+                    if (foundIdx >= 0) idx = foundIdx;
+                }
+            })();
+            __pgTargetIndex = idx;
+        });
         const lockScroll = () => {
             document.body.style.overflow = "hidden";
         };
@@ -4830,6 +4886,25 @@
         });
         document.addEventListener("keydown", e => {
             if (e.key === "Escape" && popup.classList.contains("_active")) closePopup();
+        });
+        const pgObserver = new MutationObserver(() => {
+            if (!popup.classList.contains("_active")) return;
+            const galleryEl = document.querySelector(".product-gallery__gallery");
+            const mainSwiper = window.productGalleryMainSwiper || galleryEl && galleryEl.swiper;
+            if (!mainSwiper) return;
+            setTimeout(() => {
+                if (typeof mainSwiper.update === "function") mainSwiper.update();
+                mainSwiper.slideTo(__pgTargetIndex, 0, false);
+                if (mainSwiper.thumbs && mainSwiper.thumbs.swiper) {
+                    const ts = mainSwiper.thumbs.swiper;
+                    if (typeof ts.update === "function") ts.update();
+                    ts.slideTo(__pgTargetIndex, 0, false);
+                }
+            }, 10);
+        });
+        pgObserver.observe(popup, {
+            attributes: true,
+            attributeFilter: [ "class" ]
         });
     });
     document.addEventListener("click", async event => {
