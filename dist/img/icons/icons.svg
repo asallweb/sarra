@@ -56,6 +56,10 @@
 		<path d="M1 13L13 1" stroke="white" stroke-opacity="0.5" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
 		<path d="M13 13L1 1" stroke="white" stroke-opacity="0.5" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
 	</symbol>
+	<symbol id="close-4" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+		<path d="M1 13L13 1" stroke="currentColor" stroke-opacity="1" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+		<path d="M13 13L1 1" stroke="currentColor" stroke-opacity="1" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+	</symbol>
 
 	<symbol id="check-1" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
 		<circle cx="6.5" cy="6.5" r="6.5" fill="#3AB50E"/>

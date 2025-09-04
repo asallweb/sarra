@@ -4937,6 +4937,43 @@
             console.error("Не удалось скопировать:", err);
         }
     });
+    document.addEventListener("DOMContentLoaded", function() {
+        const counters = document.querySelectorAll("[data-counter]");
+        if (!counters.length) return;
+        counters.forEach(counter => {
+            const input = counter.querySelector(".counter__input");
+            const minus = counter.querySelector(".counter__btn--minus");
+            const plus = counter.querySelector(".counter__btn--plus");
+            if (!input || !minus || !plus) return;
+            const getMin = () => parseInt(input.getAttribute("min") || "1", 10);
+            const getStep = () => parseInt(input.getAttribute("step") || "1", 10);
+            const getMax = () => {
+                const m = input.getAttribute("max");
+                return m ? parseInt(m, 10) : 1 / 0;
+            };
+            const clamp = v => Math.min(Math.max(v, getMin()), getMax());
+            minus.addEventListener("click", () => {
+                const next = clamp((parseInt(input.value || "0", 10) || 0) - getStep());
+                input.value = next;
+                input.dispatchEvent(new Event("change", {
+                    bubbles: true
+                }));
+            });
+            plus.addEventListener("click", () => {
+                const next = clamp((parseInt(input.value || "0", 10) || 0) + getStep());
+                input.value = next;
+                input.dispatchEvent(new Event("change", {
+                    bubbles: true
+                }));
+            });
+            input.addEventListener("input", () => {
+                input.value = (input.value || "").replace(/\D+/g, "");
+            });
+            input.addEventListener("blur", () => {
+                input.value = clamp(parseInt(input.value || "0", 10) || getMin());
+            });
+        });
+    });
     var x, i, j, l, ll, selElmnt, a, b, c;
     x = document.getElementsByClassName("custom-select");
     l = x.length;

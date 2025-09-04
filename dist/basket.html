@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>HomePage</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="css/style.min.css?_v=20250904155205">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap&_v=20250904155205" rel="stylesheet">
+</head>
+
+<body>
+	<div class="wrapper">
+		<!-- 
+<section class="preloader">
+	<style>
+		.preloader{
+			position: fixed;
+			left: 0;
+			top: 0;
+			width: 100vw;
+			height: 100vh;
+			background-color: #000;
+			z-index: 100;
+			transition: opacity 0.5s;
+		}
+		.preloader-logo{
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+		}
+		.preloader-logo img{
+			width: 300px;
+			height: 112px;
+		}
+		.preloader-logo__white{
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 0;
+			height: 100%;
+			overflow: hidden;
+		}
+		.preloader-text{
+			position: absolute;
+			left: 50%;
+			transform: translateX(-50%);
+			bottom: 10vh;
+		}
+		@keyframes preloaderTextColor {
+			0% {
+				color: #fff;
+			}
+			50% {
+				color: #3d3d3d;
+			}
+			100% {
+				color: #fff;
+			}
+		}
+		.preloader-text {
+			animation: preloaderTextColor 1s infinite;
+		}
+	</style>
+	<div class="preloader-logo">
+		<img src="img/logotypes/logo-grey.svg" class="preloader-logo__grey">
+		<div class="preloader-logo__white">
+			<img src="img/logotypes/logo.svg" class="preloader-logo__white">
+		</div>
+	</div>
+	<div class="preloader-text">
+		ЗАГРУЗКА
+	</div>
+	<script>
+		document.addEventListener('DOMContentLoaded', function () {
+			var whiteLogo = document.querySelector('.preloader-logo__white');
+			var preloader = document.querySelector('.preloader');
+			var duration = 1800; // Длительность анимации в мс
+			var fadeDuration = 300; // Длительность исчезновения прелоадера
+			var start = null;
+
+			// Блокируем скролл
+			document.body.style.overflow = 'hidden';
+
+			function animateWidth(timestamp) {
+				if (!start) start = timestamp;
+				var progress = (timestamp - start) / duration;
+				if (progress > 1) progress = 1;
+				whiteLogo.style.width = (progress * 100) + '%';
+				if (progress < 1) {
+					requestAnimationFrame(animateWidth);
+				} else {
+					// Анимация завершена — убираем прелоадер
+					preloader.style.transition = 'opacity ' + (fadeDuration/1000) + 's';
+					preloader.style.opacity = '0';
+					setTimeout(function() {
+						preloader.style.display = 'none';
+						document.body.style.overflow = '';
+						// Диспатчим событие о завершении прелоадера
+						window.dispatchEvent(new Event('preloader:done'));
+					}, fadeDuration);
+				}
+			}
+
+			requestAnimationFrame(animateWidth);
+		});
+	</script>
+</section>
+ -->
+		<header class="header" data-animate-name="animate__fadeInDown">
+			<div class="__container">
+				<div class="header__wrapper">
+					<div class="header__menu menu">
+						<button type="button" class="menu__icon">
+							<div class="icon-menu"><span></span></div>
+							<div class="menu__icon-text">МЕНЮ</div>
+						</button>
+						<nav class="menu__body">
+							<div class="menu__body-inner">
+								<div class="menu__body-toggler _active">
+									<button class="menu__body-toggler-button _active" data-menu-list="catalog">Каталог</button>
+									<button class="menu__body-toggler-button" data-menu-list="customers">Покупателям</button>
+								</div>
+								<ul class="menu__list _active" id="catalog">
+									<li class="menu__item"><a href="" class="menu__link" data-show-submenu="submenu-1">Кресты</a></li>
+									<li class="menu__item"><a href="" class="menu__link">Подвески</a></li>
+									<li class="menu__item"><a href="" class="menu__link">Цепи</a></li>
+									<li class="menu__item"><a href="" class="menu__link">Шнурки</a></li>
+									<li class="menu__item"><a href="" class="menu__link">Кольца и перстни</a></li>
+									<li class="menu__item"><a href="" class="menu__link">Браслеты</a></li>
+									<li class="menu__item"><a href="" class="menu__link">Бусины</a></li>
+									<li class="menu__item"><a href="" class="menu__link">Серьги</a></li>
+									<li class="menu__item"><a href="" class="menu__link">Аксессуары</a></li>
+								</ul>
+								<ul class="menu__list" id="customers">
+									<li class="menu__item"><a href="" class="menu__link">Покупателям</a></li>
+									<li class="menu__item"><a href="" class="menu__link">О бренде</a></li>
+									<li class="menu__item"><a href="" class="menu__link">Новости</a></li>
+									<li class="menu__item"><a href="" class="menu__link">История</a></li>
+									<li class="menu__item"><a href="" class="menu__link">Шоурум в Москве</a></li>
+									<li class="menu__item"><a href="" class="menu__link">Контакты</a></li>
+								</ul>
+								<div class="menu__submenu" id="submenu-1">
+									<button class="menu__submenu-back">
+										<svg width="8" height="14">
+											<use xlink:href="img/icons/icons.svg#icon-arrow-2"></use>
+										</svg>
+										КРЕСТЫ
+									</button>
+									<a href="" class="menu__submenu-all">
+										Все изделия
+										<svg width="14" height="10">
+											<use xlink:href="img/icons/icons.svg#icon-arrow-1"></use>
+										</svg>
+									</a>
+									<a href="" class="menu__submenu-link">Серебряные</a>
+									<a href="" class="menu__submenu-link">Позолоченные</a>
+									<a href="" class="menu__submenu-link">Из дерева</a>
+								</div>
+							</div>
+						</nav>
+					</div>
+					<button class="header__catalog-btn">
+						<div class="header__catalog-btn-icon">
+							<div></div>
+						</div>
+						Каталог
+					</button>
+					<ul class="header__nav-list">
+						<li class="header__nav-item"><a href="" class="header__nav-link">О бренде</a></li>
+						<li class="header__nav-item"><a href="" class="header__nav-link">Покупателям</a></li>
+					</ul>
+					<a href="" class="header__logo-link">
+						<img src="img/logotypes/logo.svg" class="header__logo-img">
+					</a>
+					<ul class="header__nav-list">
+						<li class="header__nav-item"><a href="" class="header__nav-link">Шоурум в Москве</a></li>
+						<li class="header__nav-item"><a href="" class="header__nav-link">Контакты</a></li>
+					</ul>
+					<div class="header__tools">
+						<button class="header__tools-btn" open-search-popup>
+							<svg>
+								<use xlink:href="img/icons/icons.svg#icon-search-1"></use>
+							</svg>
+						</button>
+						<button class="header__tools-btn">
+							<svg>
+								<use xlink:href="img/icons/icons.svg#icon-favorites-1"></use>
+							</svg>
+						</button>
+						<button class="header__tools-btn">
+							<svg>
+								<use xlink:href="img/icons/icons.svg#icon-basket-1"></use>
+							</svg>
+							<div class="header__tools-btn-count">3</div>
+						</button>
+					</div>
+				</div>
+			</div>
+			<div class="catalog-menu">
+				<div class="__container">
+					<div class="catalog-menu__wrapper">
+						<div class="catalog-menu__list-links">
+							<a href="#" class="catalog-menu__link _active" data-block="catalog-block-1">Кресты</a>
+							<a href="#" class="catalog-menu__link" data-block="catalog-block-2">Подвески</a>
+							<a href="#" class="catalog-menu__link" data-block="catalog-block-3">Цепи</a>
+							<a href="#" class="catalog-menu__link" data-block="catalog-block-4">Шнурки</a>
+							<a href="#" class="catalog-menu__link" data-block="catalog-block-5">Кольца и перстни</a>
+							<a href="#" class="catalog-menu__link" data-block="catalog-block-6">Браслеты</a>
+							<a href="#" class="catalog-menu__link" data-block="catalog-block-7">Бусины</a>
+							<a href="#" class="catalog-menu__link" data-block="catalog-block-8">Серьги</a>
+							<a href="#" class="catalog-menu__link" data-block="catalog-block-9">Аксессуары</a>
+						</div>
+						<div class="catalog-menu__list-blocks">
+							<div class="catalog-menu__block _active" data-blockId="catalog-block-1">
+								<div class="catalog-menu__block-side">
+									<a href="" class="catalog-menu__block-link _main">
+										Все изделия
+										<svg>
+											<use xlink:href="img/icons/icons.svg#icon-arrow-1"></use>
+										</svg>
+									</a>
+									<a href="" class="catalog-menu__block-link">Серебряные</a>
+									<a href="" class="catalog-menu__block-link">Позолоченные</a>
+									<a href="" class="catalog-menu__block-link _active">Из дерева</a>
+								</div>
+								<div class="catalog-menu__block-media">
+									<img src="img/content/catalog-menu-1.webp" class="">
+									<img src="img/content/catalog-menu-2.webp" class="">
+								</div>
+							</div>
+							<div class="catalog-menu__block" data-blockId="catalog-block-2">
+								<div class="catalog-menu__block-side">
+									<a href="" class="catalog-menu__block-link _main">
+										Все изделия
+										<svg>
+											<use xlink:href="img/icons/icons.svg#icon-arrow-1"></use>
+										</svg>
+									</a>
+									<a href="" class="catalog-menu__block-link">Позолоченные</a>
+									<a href="" class="catalog-menu__block-link">Серебряные</a>
+									<a href="" class="catalog-menu__block-link _active">Из дерева</a>
+								</div>
+								<div class="catalog-menu__block-media">
+									<img src="img/content/catalog-menu-2.webp" class="">
+									<img src="img/content/catalog-menu-1.webp" class="">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<section class="search-popup">
+			<button class="search-popup__close">
+				<svg width="45" height="45">
+					<use xlink:href="img/icons/icons.svg#close-2"></use>
+				</svg>
+			</button>
+			<div class="search-popup__wrapper">
+				<div class="search-popup__title">ПОИСК</div>
+				<div class="search-popup__search">
+					<div class="search-popup__search-field">
+						<input type="text" placeholder="Что будем искать" class="search-popup__search-input">
+						<button class="search-popup__search-clear">
+							<svg>
+								<use xlink:href="img/icons/icons.svg#close-3"></use>
+							</svg>
+						</button>
+						<button class="search-popup__search-submit">
+							<svg>
+								<use xlink:href="img/icons/icons.svg#icon-search-1"></use>
+							</svg>
+						</button>
+					</div>
+				</div>
+				<div class="search-popup__searching">
+					<div class="search-popup__searching-title">Часто ищут</div>
+					<div class="search-popup__searching-list">
+						<a href="" class="search-popup__searching-link">Крестты</a>
+						<a href="" class="search-popup__searching-link">Подвески</a>
+						<a href="" class="search-popup__searching-link">Кольца и перстни</a>
+						<a href="" class="search-popup__searching-link">Цепи</a>
+						<a href="" class="search-popup__searching-link">Шнурки</a>
+						<a href="" class="search-popup__searching-link">Браслеты</a>
+						<a href="" class="search-popup__searching-link">Бусины</a>
+						<a href="" class="search-popup__searching-link">Серьги</a>
+					</div>
+				</div>
+				<div class="search-popup__not-found">
+					По вашему запросу ничего не найдено(
+				</div>
+				<div class="search-popup__results">
+					<div class="search-popup__results-title">Результаты поиска</div>
+					<div class="search-popup__results-list">
+						<div class="product-line">
+							<a href="" class="product-line__image">
+								<img src="img/content/product-line-1.webp" class="product-line__img">
+							</a>
+							<div class="product-line__content">
+								<div class="product-line__category">Серебро</div>
+								<a href="" class="product-line__title">Название товара на сайте в две строки</a>
+								<div class="product-line__price">516 000 ₽ </div>
+							</div>
+						</div>
+						<div class="product-line">
+							<a href="" class="product-line__image">
+								<img src="img/content/product-line-2.webp" class="product-line__img">
+							</a>
+							<div class="product-line__content">
+								<div class="product-line__category">Серебро</div>
+								<a href="" class="product-line__title">Еще одно название товара на сайте</a>
+								<div class="product-line__price">51 000 ₽ </div>
+							</div>
+						</div>
+						<div class="product-line">
+							<a href="" class="product-line__image">
+								<img src="img/content/product-line-3.webp" class="product-line__img">
+							</a>
+							<div class="product-line__content">
+								<div class="product-line__category">Серебро</div>
+								<a href="" class="product-line__title">Название товара на сайте в две строки</a>
+								<div class="product-line__price">516 000 ₽ </div>
+							</div>
+						</div>
+					</div>
+					<div class="search-popup__all-results-wrapper">
+						<a href="" class="search-popup__all-results">
+							Все результаты (20)
+							<svg>
+								<use xlink:href="img/icons/icons.svg#icon-arrow-1"></use>
+							</svg>
+						</a>
+					</div>
+				</div>
+			</div>
+			<script>
+				(function() {
+					const section = document.querySelector('.search-popup');
+					if (!section) return;
+
+					const input = section.querySelector('.search-popup__search-input');
+					const clearBtn = section.querySelector('.search-popup__search-clear');
+					if (!input || !clearBtn) return;
+
+					function toggleClear() {
+						const hasValue = input.value.trim().length > 0;
+						clearBtn.hidden = !hasValue;
+					}
+
+					// Начальное состояние
+					toggleClear();
+
+					// Показывать/скрывать при вводе
+					input.addEventListener('input', toggleClear);
+
+					// Очистка по клику
+					clearBtn.addEventListener('click', function(e) {
+						e.preventDefault();
+						input.value = '';
+						input.dispatchEvent(new Event('input', {
+							bubbles: true
+						}));
+						input.focus();
+					});
+				})();
+			</script>
+		</section>
+		<main class="page">
+			<section class="top-background">
+				<img src="img/backgrounds/main-1.webp">
+			</section>
+			<section class="breadcrumbs">
+				<div class="__container">
+					<div class="breadcrumbs__wrapper">
+						<a href="" class="breadcrumbs__link">Главная</a>
+						<div class="breadcrumbs__separator"></div>
+						<a href="" class="breadcrumbs__link">Корзина</a>
+					</div>
+				</div>
+			</section>
+			<section class="basket">
+				<div class="__container">
+					<div class="basket__title">Ваша корзина <span class="basket__title-count">3</span></div>
+					<div class="basket__wrapper">
+						<div class="basket__body">
+							<div class="basket__item">
+								<div class="basket__item-body">
+									<div class="basket__head-item">Товар</div>
+									<div class="basket__item-image">
+										<img src="img/content/preview-product-5.webp" class="basket__item-img">
+									</div>
+									<div class="basket__item-content">
+										<a href="" class="basket__item-name">Название товара на сайте с длинным названием</a>
+										<div class="basket__item-articul">Артикул: 4556775</div>
+										<div class="basket__properties">
+											<div class="basket__properties-item">
+												<div class="basket__properties-item-row">
+													<div class="basket__properties-name">Размер</div>
+													<div class="basket__properties-value">25</div>
+												</div>
+												<div class="basket__properties-item-row">
+													<div class="basket__properties-name">Материал</div>
+													<div class="basket__properties-value">Серебро</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="basket__item-info">
+									<div class="basket__item-price">
+										<div class="basket__head-item">Цена</div>
+										380 000 P
+									</div>
+									<div class="basket__item-count">
+										<div class="basket__head-item">Количество</div>
+										<div class="counter" data-counter>
+											<button class="counter__btn counter__btn--minus" type="button" aria-label="Уменьшить">-</button>
+											<input class="counter__input" type="number" inputmode="numeric" pattern="[0-9]*" min="1" step="1" value="1">
+											<button class="counter__btn counter__btn--plus" type="button" aria-label="Увеличить">+</button>
+										</div>
+									</div>
+									<div class="basket__item-price _summary">
+										<div class="basket__head-item">Стоимость</div>
+										380 000 P
+									</div>
+									<div class="basket__item-remove">
+										<button class="basket__item-remove-btn">
+											<svg>
+												<use xlink:href="img/icons/icons.svg#close-4"></use>
+											</svg>
+										</button>
+									</div>
+								</div>
+							</div>
+							<div class="basket__item">
+								<div class="basket__item-body">
+									<div class="basket__item-image">
+										<img src="img/content/preview-product-4.webp" class="basket__item-img">
+									</div>
+									<div class="basket__item-content">
+										<a href="" class="basket__item-name">Название товара на сайте с длинным названием</a>
+										<div class="basket__item-articul">Артикул: 4556775</div>
+										<div class="basket__properties">
+											<div class="basket__properties-item">
+												<div class="basket__properties-item-row">
+													<div class="basket__properties-name">Размер</div>
+													<div class="basket__properties-value">25</div>
+												</div>
+												<div class="basket__properties-item-row">
+													<div class="basket__properties-name">Материал</div>
+													<div class="basket__properties-value">Серебро</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="basket__item-info">
+									<div class="basket__item-price">
+										55 000 P
+										<span class="old">65 000 P</span>
+									</div>
+									<div class="basket__item-count">
+										<div class="counter" data-counter>
+											<button class="counter__btn counter__btn--minus" type="button" aria-label="Уменьшить">-</button>
+											<input class="counter__input" type="number" inputmode="numeric" pattern="[0-9]*" min="1" step="1" value="1">
+											<button class="counter__btn counter__btn--plus" type="button" aria-label="Увеличить">+</button>
+										</div>
+									</div>
+									<div class="basket__item-price _summary">
+										380 000 P
+									</div>
+									<div class="basket__item-remove">
+										<button class="basket__item-remove-btn">
+											<svg>
+												<use xlink:href="img/icons/icons.svg#close-4"></use>
+											</svg>
+										</button>
+									</div>
+								</div>
+							</div>
+							<div class="basket__item">
+								<div class="basket__item-body">
+									<div class="basket__item-image">
+										<img src="img/content/preview-product-3.webp" class="basket__item-img">
+									</div>
+									<div class="basket__item-content">
+										<a href="" class="basket__item-name">Название товара на сайте с длинным названием</a>
+										<div class="basket__item-articul">Артикул: 4556775</div>
+										<div class="basket__properties">
+											<div class="basket__properties-item">
+												<div class="basket__properties-item-row">
+													<div class="basket__properties-name">Размер</div>
+													<div class="basket__properties-value">25</div>
+												</div>
+												<div class="basket__properties-item-row">
+													<div class="basket__properties-name">Материал</div>
+													<div class="basket__properties-value">Серебро</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="basket__item-info">
+									<div class="basket__item-price">
+										55 000 P
+										<span class="old">65 000 P</span>
+									</div>
+									<div class="basket__item-count">
+										<div class="counter" data-counter>
+											<button class="counter__btn counter__btn--minus" type="button" aria-label="Уменьшить">-</button>
+											<input class="counter__input" type="number" inputmode="numeric" pattern="[0-9]*" min="1" step="1" value="1">
+											<button class="counter__btn counter__btn--plus" type="button" aria-label="Увеличить">+</button>
+										</div>
+									</div>
+									<div class="basket__item-price _summary">
+										380 000 P
+									</div>
+									<div class="basket__item-remove">
+										<button class="basket__item-remove-btn">
+											<svg>
+												<use xlink:href="img/icons/icons.svg#close-4"></use>
+											</svg>
+										</button>
+									</div>
+								</div>
+							</div>
+							<div class="basket__features" data-da=".basket__features-placeholder, 1218">
+								<div class="basket__features-item">
+									<div class="basket__features-image">
+										<img src="img/content/basket__1.webp" class="basket__features-img">
+									</div>
+									<div class="basket__features-text">
+										Гарантия подлинности изделия, у всех изделий есть УИН который можно проверить на сайте пробирной палаты.
+									</div>
+								</div>
+								<div class="basket__features-item">
+									<div class="basket__features-image">
+										<img src="img/content/basket__2.webp" class="basket__features-img">
+									</div>
+									<div class="basket__features-text">
+										СДЕК доставка по всей России на следующий день!
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="basket__sidebar">
+							<div class="basket__sidebar-wrapper">
+								<div class="basket__promocode">
+									<form action="" method="POST">
+										<input type="text" class="basket__promocode-input" placeholder="Введите код">
+										<button class="basket__promocode-submit" type="submit">
+											<svg>
+												<use xlink:href="img/icons/icons.svg#icon-arrow-1"></use>
+											</svg>
+										</button>
+									</form>
+								</div>
+								<div class="basket__sidebar-info">
+									<div>3 товара</div>
+									<div>245 000 ₽ </div>
+								</div>
+								<div class="basket__sidebar-info">
+									<div>Скидка</div>
+									<div>10 000 ₽</div>
+								</div>
+								<hr>
+								<div class="basket__sidebar-total">
+									<div>Итого</div>
+									<div>245 000 ₽</div>
+								</div>
+								<button class="basket__sidebar-buy">
+									ОФОРМИТЬ ЗАКАЗ
+								</button>
+							</div>
+							<div class="basket__sidebar-methods">
+								Доступные способы оплаты и время доставки можно выбрать при оформлении заказа
+							</div>
+							<div class="basket__sidebar-bottom">
+								<a href="" class="basket__sidebar-continue">Продолжить покупки</a>
+							</div>
+						</div>
+						<div class="basket__features-placeholder"></div>
+					</div>
+				</div>
+			</section>
+		</main>
+		<section class="product-gallery">
+			<button class="product-gallery__close">
+				<svg width="45" height="45">
+					<use xlink:href="img/icons/icons.svg#close-2"></use>
+				</svg>
+			</button>
+			<div class="product-gallery__wrapper">
+				<div class="product-gallery__wrapper-thumbnails">
+					<button class="product-gallery__btn _prev product-gallery__button-prev">
+						<svg>
+							<use xlink:href="img/icons/icons.svg#icon-arrow-3"></use>
+						</svg>
+					</button>
+					<div class="product-gallery__slider-thumb swiper">
+						<div class="product-gallery__wrapper-thumb swiper-wrapper">
+							<div class="product-gallery__slide-thumb swiper-slide">
+								<img src="img/content/gallery-1.webp" class="product-gallery__gallery-thumb-img">
+							</div>
+							<div class="product-gallery__slide-thumb swiper-slide">
+								<img src="img/content/gallery-2.webp" class="product-gallery__gallery-thumb-img">
+							</div>
+							<div class="product-gallery__slide-thumb swiper-slide">
+								<img src="img/content/gallery-3.webp" class="product-gallery__gallery-thumb-img">
+							</div>
+							<div class="product-gallery__slide-thumb swiper-slide">
+								<img src="img/content/gallery-8.webp" class="product-gallery__gallery-thumb-img">
+								<button class="play-button product-gallery__play-button">
+									<svg class="_playing">
+										<use xlink:href="img/icons/icons.svg#icon-play"></use>
+									</svg>
+								</button>
+							</div>
+							<div class="product-gallery__slide-thumb swiper-slide">
+								<img src="img/content/gallery-5.webp" class="product-gallery__gallery-thumb-img">
+							</div>
+							<div class="product-gallery__slide-thumb swiper-slide">
+								<img src="img/content/gallery-6.webp" class="product-gallery__gallery-thumb-img">
+							</div>
+							<div class="product-gallery__slide-thumb swiper-slide">
+								<img src="img/content/gallery-7.webp" class="product-gallery__gallery-thumb-img">
+							</div>
+							<div class="product-gallery__slide-thumb swiper-slide">
+								<img src="img/content/gallery-1.webp" class="product-gallery__gallery-thumb-img">
+							</div>
+							<div class="product-gallery__slide-thumb swiper-slide">
+								<img src="img/content/gallery-2.webp" class="product-gallery__gallery-thumb-img">
+							</div>
+							<div class="product-gallery__slide-thumb swiper-slide">
+								<img src="img/content/gallery-3.webp" class="product-gallery__gallery-thumb-img">
+							</div>
+							<div class="product-gallery__slide-thumb swiper-slide">
+								<img src="img/content/gallery-2.webp" class="product-gallery__gallery-thumb-img">
+							</div>
+							<div class="product-gallery__slide-thumb swiper-slide">
+								<img src="img/content/gallery-5.webp" class="product-gallery__gallery-thumb-img">
+							</div>
+							<div class="product-gallery__slide-thumb swiper-slide">
+								<img src="img/content/gallery-6.webp" class="product-gallery__gallery-thumb-img">
+							</div>
+							<div class="product-gallery__slide-thumb swiper-slide">
+								<img src="img/content/gallery-7.webp" class="product-gallery__gallery-thumb-img">
+							</div>
+						</div>
+					</div>
+					<button class="product-gallery__btn _next product-gallery__button-next">
+						<svg>
+							<use xlink:href="img/icons/icons.svg#icon-arrow-3"></use>
+						</svg>
+					</button>
+				</div>
+				<div class="product-gallery__wrapper-gallery">
+					<div class="product-gallery__gallery product-gallery__slider swiper">
+						<div class="product-gallery__gallery-inner swiper-wrapper">
+							<div class="product-gallery__gallery-item product-gallery__slide swiper-slide">
+								<img src="img/content/gallery-1.webp" class="product-gallery__gallery-img">
+							</div>
+							<div class="product-gallery__gallery-item product-gallery__slide swiper-slide">
+								<img src="img/content/gallery-2.webp" class="product-gallery__gallery-img">
+							</div>
+							<div class="product-gallery__gallery-item product-gallery__slide swiper-slide">
+								<img src="img/content/gallery-3.webp" class="product-gallery__gallery-img">
+							</div>
+							<div class="product-gallery__gallery-item product-gallery__slide swiper-slide">
+								<div class="product-gallery__gallery-video video-file__wrapper">
+									<button class="play-button product-gallery__play-button">
+										<svg class="_playing">
+											<use xlink:href="img/icons/icons.svg#icon-play"></use>
+										</svg>
+										<svg class="_paused">
+											<use xlink:href="img/icons/icons.svg#icon-paused"></use>
+										</svg>
+									</button>
+									<video src="files/video/video-1.mp4" poster="img/content/gallery-4.webp" class="product-gallery__gallery-img video-file" autoplay loop></video>
+								</div>
+							</div>
+							<div class="product-gallery__gallery-item product-gallery__slide swiper-slide">
+								<img src="img/content/gallery-5.webp" class="product-gallery__gallery-img">
+							</div>
+							<div class="product-gallery__gallery-item product-gallery__slide swiper-slide">
+								<img src="img/content/gallery-6.webp" class="product-gallery__gallery-img">
+							</div>
+							<div class="product-gallery__gallery-item product-gallery__slide swiper-slide">
+								<img src="img/content/gallery-7.webp" class="product-gallery__gallery-img">
+							</div>
+							<div class="product-gallery__gallery-item product-gallery__slide swiper-slide">
+								<img src="img/content/gallery-1.webp" class="product-gallery__gallery-img">
+							</div>
+							<div class="product-gallery__gallery-item product-gallery__slide swiper-slide">
+								<img src="img/content/gallery-2.webp" class="product-gallery__gallery-img">
+							</div>
+							<div class="product-gallery__gallery-item product-gallery__slide swiper-slide">
+								<img src="img/content/gallery-3.webp" class="product-gallery__gallery-img">
+							</div>
+							<div class="product-gallery__gallery-item product-gallery__slide swiper-slide">
+								<div class="product-gallery__gallery-video video-file__wrapper">
+									<button class="play-button product-gallery__play-button">
+										<svg class="_playing">
+											<use xlink:href="img/icons/icons.svg#icon-play"></use>
+										</svg>
+										<svg class="_paused">
+											<use xlink:href="img/icons/icons.svg#icon-paused"></use>
+										</svg>
+									</button>
+									<video src="files/video/video-1.mp4" poster="img/content/gallery-4.webp" class="product-gallery__gallery-img video-file" autoplay loop></video>
+								</div>
+							</div>
+							<div class="product-gallery__gallery-item product-gallery__slide swiper-slide">
+								<img src="img/content/gallery-5.webp" class="product-gallery__gallery-img">
+							</div>
+							<div class="product-gallery__gallery-item product-gallery__slide swiper-slide">
+								<img src="img/content/gallery-6.webp" class="product-gallery__gallery-img">
+							</div>
+							<div class="product-gallery__gallery-item product-gallery__slide swiper-slide">
+								<img src="img/content/gallery-7.webp" class="product-gallery__gallery-img">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<footer class="footer">
+			<div class="__container">
+				<div class="footer__wrapper">
+					<div class="footer__top">
+						<div class="footer__top-side _left">
+							<a href="tel:+7 (495) 741-15-48" class="footer__phone">+7 (495) 741-15-48</a>
+							<div class="footer__address">
+								<div>Фирменный салон:</div>
+								г. Москва, пер. Духовской, д.17
+							</div>
+						</div>
+						<div class="footer__top-center">
+							<a href="" class="footer__logo">
+								<img src="img/logotypes/logo.svg" class="footer__logo-img">
+							</a>
+						</div>
+						<div class="footer__top-side _right">
+							<button class="footer__up">
+								<div class="footer__up-icon"></div>
+								<div class="footer__up-text">НАВЕРХ</div>
+							</button>
+						</div>
+					</div>
+					<div class="footer__middle">
+						<div class="footer__middle-side">
+							<a href="" class="footer__menu-link">КАТАЛОГ</a>
+							<a href="" class="footer__menu-link _active">ПОКУПАТЕЛЯМ</a>
+							<a href="" class="footer__menu-link">О БРЕНДЕ</a>
+						</div>
+						<div class="footer__middle-separator"></div>
+						<div class="footer__middle-side">
+							<a href="" class="footer__menu-link">НОВОСТИ</a>
+							<a href="" class="footer__menu-link">ИСТОРИЯ</a>
+							<a href="" class="footer__menu-link">КОНТАКТЫ</a>
+						</div>
+					</div>
+					<div class="footer__bottom">
+						<div class="footer__bottom-side">© SARRA-SHOP. 2025.</div>
+						<div class="footer__bottom-center">
+							<img src="img/icons/payment-method-1.webp" class="">
+							<img src="img/icons/payment-method-2.webp" class="">
+							<img src="img/icons/payment-method-3.webp" class="">
+							<img src="img/icons/payment-method-4.webp" class="">
+						</div>
+						<div class="footer__bottom-side">
+							<a href="">Политика конфиденциальности</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+	<div id="share" aria-hidden="true" class="popup _share">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<button data-close type="button" class="popup__close">
+					<svg width="45" height="45">
+						<use xlink:href="img/icons/icons.svg#close-2"></use>
+					</svg>
+				</button>
+				<div class="popup__text">
+					<div class="popup__title">Поделиться</div>
+					<div class="popup__social">
+						<a href="" class="popup__social-link">
+							<svg xmlns="http://www.w3.org/2000/svg" width="55" height="55" viewBox="0 0 55 55" fill="none">
+								<g clip-path="url(#clip0_397_1910)">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M27.5 0C42.6884 0 55 12.3116 55 27.5C55 42.6884 42.6884 55 27.5 55C12.3116 55 0 42.6884 0 27.5C0 12.3116 12.3116 0 27.5 0Z" fill="#ED6F2D" />
+									<path d="M38.9186 17.5646L35.0031 37.3034C35.0031 37.3034 34.4553 38.672 32.9503 38.0156L23.9161 31.089L23.8742 31.0686C25.0945 29.9729 34.5573 21.4651 34.9709 21.0795C35.6111 20.4822 35.2137 20.1266 34.4703 20.5778L20.4926 29.4541L15.1 27.6397C15.1 27.6397 14.2514 27.3379 14.1697 26.6815C14.087 26.0241 15.1279 25.6685 15.1279 25.6685L37.1118 17.0447C37.1118 17.0447 38.9186 16.2509 38.9186 17.5646Z" fill="#FEFEFE" />
+								</g>
+								<defs>
+									<clipPath id="clip0_397_1910">
+										<rect width="55" height="55" fill="white" />
+									</clipPath>
+								</defs>
+							</svg>
+							Telegram
+						</a>
+						<a href="" class="popup__social-link">
+							<svg xmlns="http://www.w3.org/2000/svg" width="55" height="55" viewBox="0 0 55 55" fill="none">
+								<g clip-path="url(#clip0_397_1919)">
+									<path d="M27.5 55C42.6878 55 55 42.6878 55 27.5C55 12.3122 42.6878 0 27.5 0C12.3122 0 0 12.3122 0 27.5C0 42.6878 12.3122 55 27.5 55Z" fill="#ED6F2D" />
+									<path d="M39.6812 15.2496C36.45 12.014 32.1531 10.2308 27.5727 10.2308C18.141 10.2308 10.4582 17.9094 10.4582 27.3453C10.4582 30.3617 11.2445 33.3051 12.7441 35.9004L10.3164 44.7691L19.3871 42.3887C21.8879 43.7508 24.7023 44.4683 27.5684 44.4726H27.577C37.0086 44.4726 44.6871 36.7941 44.6914 27.3582C44.6914 22.7863 42.9125 18.4851 39.6855 15.2496M27.5727 41.5808H27.5684C25.016 41.5808 22.5109 40.8933 20.3281 39.6L19.8082 39.2906L14.4242 40.7043L15.8594 35.4535L15.5199 34.9121C14.0977 32.6476 13.3414 30.0308 13.3457 27.341C13.3457 19.4992 19.7309 13.1183 27.577 13.1183C31.3754 13.1183 34.9461 14.6008 37.6359 17.2906C40.3215 19.9804 41.7996 23.5554 41.7996 27.3539C41.7996 35.2 35.4145 41.5808 27.5727 41.5808ZM35.3758 30.9289C34.9461 30.714 32.8449 29.6828 32.4539 29.5367C32.0629 29.3949 31.7793 29.3219 31.4914 29.7515C31.2035 30.1812 30.3871 31.1437 30.1379 31.4273C29.8887 31.7109 29.6395 31.7496 29.2098 31.5347C28.7801 31.3199 27.4051 30.8687 25.7723 29.4121C24.5004 28.2777 23.641 26.8769 23.3918 26.4472C23.1426 26.0176 23.366 25.7898 23.5809 25.575C23.7742 25.3816 24.0105 25.0765 24.2211 24.8273C24.4316 24.5781 24.5047 24.3976 24.6465 24.114C24.7883 23.8304 24.7195 23.5812 24.6121 23.3664C24.5047 23.1515 23.6496 21.0461 23.293 20.191C22.9449 19.3574 22.5926 19.4691 22.3305 19.4562C22.0813 19.4433 21.7977 19.439 21.5098 19.439C21.2219 19.439 20.7621 19.5465 20.3711 19.9761C19.9801 20.4058 18.8758 21.4371 18.8758 23.5426C18.8758 25.648 20.4098 27.6804 20.6203 27.964C20.8352 28.2476 23.6367 32.5703 27.925 34.4222C28.9434 34.8605 29.7426 35.1269 30.3613 35.3246C31.384 35.6512 32.3164 35.6039 33.0555 35.4922C33.8762 35.3676 35.5863 34.4566 35.943 33.4597C36.2996 32.4629 36.2996 31.6035 36.1922 31.4273C36.0848 31.2469 35.7969 31.1394 35.3715 30.9289" fill="white" />
+								</g>
+								<defs>
+									<clipPath id="clip0_397_1919">
+										<rect width="55" height="55" fill="white" />
+									</clipPath>
+								</defs>
+							</svg>
+							WhatsApp
+						</a>
+					</div>
+					<div class="popup__copy-wrapper">
+						<button class="popup__copy-link" data-to-copy="тут текст для копирования">
+							<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
+								<path d="M16 0H9C4.02944 0 0 4.02944 0 9V16C0 20.9706 4.02944 25 9 25H16C20.9706 25 25 20.9706 25 16V9C25 4.02944 20.9706 0 16 0Z" fill="#EBEBEB" />
+								<mask id="mask0_397_1924" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="6" y="5" width="14" height="15">
+									<path d="M19.832 5H6V19.099H19.832V5Z" fill="white" />
+								</mask>
+								<g mask="url(#mask0_397_1924)">
+									<path d="M8.894 8.01367H14.194C14.9611 8.01526 15.6962 8.32067 16.2386 8.86306C16.781 9.40544 17.0864 10.1406 17.088 10.9077V16.2077C17.0864 16.9747 16.781 17.7099 16.2386 18.2523C15.6962 18.7947 14.9611 19.1001 14.194 19.1017H8.894C8.12643 19.1001 7.3908 18.7943 6.84833 18.2512C6.30585 17.7082 6.00079 16.9722 6 16.2047V10.9047C6.00238 10.1381 6.30814 9.40373 6.85044 8.86199C7.39274 8.32025 8.12747 8.01525 8.894 8.01367ZM14.194 17.5287C14.5446 17.5271 14.8802 17.3869 15.1277 17.1386C15.3753 16.8903 15.5145 16.5542 15.515 16.2037V10.9037C15.5137 10.553 15.3735 10.2172 15.1252 9.96963C14.8769 9.72207 14.5406 9.58293 14.19 9.58267H8.89C8.53936 9.58399 8.20352 9.72414 7.95596 9.97246C7.7084 10.2208 7.56926 10.557 7.569 10.9077V16.2077C7.57032 16.5583 7.71047 16.8941 7.95879 17.1417C8.2071 17.3893 8.54336 17.5284 8.894 17.5287H14.194Z" fill="#454545" />
+									<path d="M19.0478 14.68C18.8396 14.68 18.6399 14.5973 18.4927 14.4501C18.3455 14.3029 18.2628 14.1032 18.2628 13.895V9.781C18.2617 8.92928 17.9228 8.11276 17.3205 7.51059C16.7181 6.90842 15.9015 6.56979 15.0498 6.569H11.1418C10.9385 6.56174 10.7461 6.47591 10.6049 6.32958C10.4637 6.18326 10.3848 5.98784 10.3848 5.7845C10.3848 5.58116 10.4637 5.38574 10.6049 5.23942C10.7461 5.09309 10.9385 5.00726 11.1418 5H15.0508C16.3184 5.00132 17.5338 5.50543 18.4303 6.40172C19.3268 7.29802 19.8312 8.51331 19.8328 9.781V13.9C19.8314 14.1073 19.7481 14.3057 19.6011 14.4518C19.454 14.598 19.2551 14.68 19.0478 14.68Z" fill="#454545" />
+								</g>
+							</svg>
+							Копировать ссылку
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="js/app.min.js?_v=20250904155205"></script>
+</body>
+
+</html>
