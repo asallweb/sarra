@@ -6899,11 +6899,16 @@ body::after {
   max-width: 305px
 }
 .basket__sidebar {
+  position: relative;
   width: 375px;
   flex-shrink: 0
 }
 .basket__sidebar form {
   width: 100%
+}
+.basket__sidebar-sticky {
+  position: sticky;
+  top: 10px
 }
 .basket__sidebar-wrapper {
   border-radius: 16px;
