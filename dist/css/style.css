@@ -5975,7 +5975,9 @@ body::after {
 }
 .product-detail__wrapper {
   display: flex;
-  gap: 6%
+  gap: 6%;
+  max-width: 1500px;
+  margin: 0 auto
 }
 .product-detail__play-button {
   position: absolute;
@@ -6115,7 +6117,7 @@ body::after {
   background: rgba(255,255,255,.5);
   position: absolute;
   bottom: 0;
-  left: -144%;
+  left: -168%;
   z-index: -1
 }
 .product-detail__buy {
@@ -7098,6 +7100,170 @@ body::after {
   max-width: 345px;
   margin-top: 15px
 }
+.sections {
+  margin-bottom: 150px
+}
+.sections__title {
+  font-family: "Cormorant Garamond";
+  font-size: 86px;
+  font-weight: 600;
+  line-height: 1.85;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 50px
+}
+.sections__grid {
+  display: flex;
+  flex-direction: column;
+  gap: 30px
+}
+.sections__row {
+  display: flex;
+  gap: 27px
+}
+.sections__row:nth-child(even) {
+  flex-direction: row-reverse
+}
+.sections__col {
+  display: flex;
+  gap: 27px;
+  flex: 1 1 auto;
+  width: 50%
+}
+.sections__col .block {
+  flex: 1 1 50%;
+  min-height: 490px
+}
+.block {
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,.3);
+  background: rgba(0,0,0,.35);
+  backdrop-filter: blur(2px);
+  padding: 70px 40px 50px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  position: relative;
+  transition: background-color .2s ease-in-out
+}
+.block:hover {
+  background-color: #fff
+}
+.block:hover .block__title {
+  color: #000
+}
+.block:hover .block__list-item {
+  color: #000
+}
+.block:hover .block__link {
+  background-color: #ed6f2d;
+  color: #fff
+}
+.block__title {
+  font-family: "Cormorant Garamond";
+  font-size: 36px;
+  font-weight: 600;
+  line-height: normal;
+  text-transform: uppercase
+}
+.block__list {
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  gap: 18px
+}
+.block__list-item:hover {
+  text-decoration: underline
+}
+.block__link-wrapper {
+  margin-top: auto
+}
+.block__link {
+  border-radius: 4px;
+  border: 1px solid #ed6f2d;
+  display: inline-flex;
+  padding: 15px 10px;
+  align-items: center;
+  gap: 10px;
+  color: #ed6f2d
+}
+.block__link svg {
+  width: 16px;
+  height: 8px
+}
+.block__link:hover {
+  background-color: #ed6f2d;
+  color: #fff
+}
+.block__image {
+  position: absolute;
+  z-index: -1
+}
+._num-1 .block__image {
+  top: 27px;
+  right: 80px
+}
+._num-2 .block__image {
+  bottom: 40px;
+  right: 40px
+}
+._num-3 .block__image {
+  right: 41px;
+  bottom: 120px
+}
+._num-4 .block__image {
+  top: 95px;
+  right: 92px
+}
+._num-5 .block__image {
+  right: 40px;
+  bottom: 71px
+}
+._num-6 .block__image {
+  right: 40px;
+  bottom: 40px
+}
+._num-7 .block__image {
+  top: 95px;
+  right: 49px
+}
+._num-8 .block__image {
+  right: 0;
+  bottom: 0
+}
+._num-9 .block__image {
+  bottom: 42px;
+  right: 10px
+}
+.block__img {
+  width: 100%;
+  height: auto
+}
+.sections-features {
+  margin: 150px 0
+}
+.sections-features__list {
+  display: flex
+}
+.sections-features__item {
+  flex: 1 0 33.333%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  border-left: 1px solid rgba(255,255,255,.5)
+}
+.sections-features__item:last-child {
+  border-right: 1px solid rgba(255,255,255,.5)
+}
+.sections-features__title {
+  text-align: center;
+  font-family: "Cormorant Garamond";
+  font-size: 28px;
+  font-weight: 600;
+  text-transform: uppercase
+}
 .swiper {
   overflow: hidden
 }
@@ -7248,6 +7414,27 @@ body::after {
   .product-showroom__img {
     width: 100%;
     height: auto
+  }
+  .sections {
+    margin-bottom: 100px
+  }
+  .sections__title {
+    font-size: 76px;
+    margin-bottom: 40px
+  }
+  .sections__row {
+    flex-direction: column;
+    gap: 30px
+  }
+  .sections__row:nth-child(even) {
+    flex-direction: column-reverse
+  }
+  .sections__col {
+    gap: 30px;
+    width: 100%
+  }
+  .sections-features__title {
+    font-size: 24px
   }
 }
 @media (max-width:1600px) {
@@ -7853,6 +8040,91 @@ body::after {
   .product-showroom__img {
     max-width: 611px
   }
+  .sections {
+    margin-bottom: 70px
+  }
+  .sections__title {
+    font-size: 62px;
+    margin-bottom: 30px
+  }
+  .sections__row {
+    gap: 28px
+  }
+  .sections__col {
+    gap: 28px
+  }
+  .block {
+    padding: 70px 30px 50px 30px
+  }
+  .block__title {
+    font-size: 32px
+  }
+  ._num-1 .block__image {
+    max-width: 260px;
+    top: 77px;
+    right: 55px
+  }
+  ._num-2 .block__image {
+    max-width: 130px;
+    bottom: 30px;
+    right: 30px
+  }
+  ._num-3 .block__image {
+    max-width: 290px;
+    right: 20px;
+    bottom: 110px
+  }
+  ._num-4 .block__image {
+    max-width: 415px;
+    right: 30px;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%)
+  }
+  ._num-5 .block__image {
+    max-width: 270px;
+    right: 5px;
+    bottom: 91px
+  }
+  ._num-6 .block__image {
+    max-width: 185px;
+    top: 275px;
+    right: 25px
+  }
+  ._num-7 .block__image {
+    max-width: 500px;
+    top: auto;
+    right: 21px;
+    bottom: 0
+  }
+  ._num-8 .block__image {
+    max-width: 270px
+  }
+  ._num-9 .block__image {
+    max-width: 140px;
+    right: 30px;
+    bottom: 53px
+  }
+  .sections-features__list {
+    flex-direction: column
+  }
+  .sections-features__item {
+    padding: 40px 0;
+    flex: 1 0 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 35px;
+    border-top: 1px solid rgba(255,255,255,.5);
+    border-left: none
+  }
+  .sections-features__item:last-child {
+    border-right: none;
+    border-bottom: 1px solid rgba(255,255,255,.5)
+  }
+  .sections-features__title br {
+    display: none
+  }
 }
 @media (max-width:1279px)and (any-hover:none) {
   .icon-menu {
@@ -8264,6 +8536,85 @@ body::after {
   .product-showroom__img {
     max-width: 345px
   }
+  .sections__title {
+    font-size: 38px;
+    margin-bottom: 20px
+  }
+  .sections__grid {
+    gap: 20px
+  }
+  .sections__col {
+    width: 100%;
+    flex-direction: column
+  }
+  .sections__col .block {
+    flex: 1 1 100%;
+    min-height: 380px
+  }
+  .block {
+    padding: 50px 30px 40px 30px;
+    gap: 30px
+  }
+  .block._num-1,
+  .block._num-4 {
+    min-height: 430px;
+    padding-bottom: 70px
+  }
+  .block__title {
+    font-size: 26px
+  }
+  ._num-1 .block__image {
+    max-width: 104px;
+    top: auto;
+    right: 20px;
+    bottom: 24px
+  }
+  ._num-2 .block__image {
+    max-width: 110px;
+    bottom: 20px;
+    right: 20px
+  }
+  ._num-3 .block__image {
+    max-width: 250px;
+    bottom: 95px;
+    right: 20px
+  }
+  ._num-4 .block__image {
+    max-width: 167px;
+    top: auto;
+    bottom: 30px;
+    right: 6px;
+    -webkit-transform: none;
+    transform: none
+  }
+  ._num-5 .block__image {
+    max-width: 230px;
+    right: 20px;
+    bottom: 30px
+  }
+  ._num-6 .block__image {
+    max-width: 145px;
+    top: auto;
+    right: 20px;
+    bottom: 30px
+  }
+  ._num-7 .block__image {
+    max-width: 200px;
+    top: auto;
+    right: 10px;
+    bottom: 0
+  }
+  ._num-8 .block__image {
+    max-width: 230px
+  }
+  ._num-9 .block__image {
+    max-width: 100px;
+    bottom: 30px;
+    right: 30px
+  }
+  .sections-features {
+    display: none
+  }
 }
 @media (max-width:600px) {
   .basket__title {
@@ -8509,6 +8860,38 @@ body::after {
   .empty-basket__img {
     max-width: 345px;
     margin-top: 15px
+  }
+}
+@media (max-width:1799px)and (min-width:1280px) {
+  ._num-1 .block__list,
+  ._num-4 .block__list,
+  ._num-7 .block__list {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    max-width: 576px
+  }
+  ._num-1 .block__image {
+    top: 27px;
+    right: 150px
+  }
+  ._num-2 .block__image {
+    right: 50px;
+    bottom: 40px
+  }
+  ._num-3 .block__image {
+    bottom: 120px;
+    right: 50px
+  }
+  ._num-4 .block__image {
+    right: 65px;
+    bottom: 75px
+  }
+  ._num-7 .block__image {
+    right: 78px
+  }
+  ._num-9 .block__image {
+    bottom: 42px;
+    right: 40px
   }
 }
 @media print,
