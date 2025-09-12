@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-	<title>Sections</title>
+	<title>Order 1</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
@@ -117,73 +117,15 @@
 		<header class="header" data-animate-name="animate__fadeInDown">
 			<div class="__container">
 				<div class="header__wrapper">
-					<div class="header__menu menu">
-						<button type="button" class="menu__icon">
-							<div class="icon-menu"><span></span></div>
-							<div class="menu__icon-text">МЕНЮ</div>
-						</button>
-						<nav class="menu__body">
-							<div class="menu__body-inner">
-								<div class="menu__body-toggler _active">
-									<button class="menu__body-toggler-button _active" data-menu-list="catalog">Каталог</button>
-									<button class="menu__body-toggler-button" data-menu-list="customers">Покупателям</button>
-								</div>
-								<ul class="menu__list _active" id="catalog">
-									<li class="menu__item"><a href="" class="menu__link" data-show-submenu="submenu-1">Кресты</a></li>
-									<li class="menu__item"><a href="" class="menu__link">Подвески</a></li>
-									<li class="menu__item"><a href="" class="menu__link">Цепи</a></li>
-									<li class="menu__item"><a href="" class="menu__link">Шнурки</a></li>
-									<li class="menu__item"><a href="" class="menu__link">Кольца и перстни</a></li>
-									<li class="menu__item"><a href="" class="menu__link">Браслеты</a></li>
-									<li class="menu__item"><a href="" class="menu__link">Бусины</a></li>
-									<li class="menu__item"><a href="" class="menu__link">Серьги</a></li>
-									<li class="menu__item"><a href="" class="menu__link">Аксессуары</a></li>
-								</ul>
-								<ul class="menu__list" id="customers">
-									<li class="menu__item"><a href="" class="menu__link">Покупателям</a></li>
-									<li class="menu__item"><a href="" class="menu__link">О бренде</a></li>
-									<li class="menu__item"><a href="" class="menu__link">Новости</a></li>
-									<li class="menu__item"><a href="" class="menu__link">История</a></li>
-									<li class="menu__item"><a href="" class="menu__link">Шоурум в Москве</a></li>
-									<li class="menu__item"><a href="" class="menu__link">Контакты</a></li>
-								</ul>
-								<div class="menu__submenu" id="submenu-1">
-									<button class="menu__submenu-back">
-										<svg width="8" height="14">
-											<use xlink:href="img/icons/icons.svg#icon-arrow-2"></use>
-										</svg>
-										КРЕСТЫ
-									</button>
-									<a href="" class="menu__submenu-all">
-										Все изделия
-										<svg width="14" height="10">
-											<use xlink:href="img/icons/icons.svg#icon-arrow-1"></use>
-										</svg>
-									</a>
-									<a href="" class="menu__submenu-link">Серебряные</a>
-									<a href="" class="menu__submenu-link">Позолоченные</a>
-									<a href="" class="menu__submenu-link">Из дерева</a>
-								</div>
-							</div>
-						</nav>
-					</div>
-					<button class="header__catalog-btn">
-						<div class="header__catalog-btn-icon">
-							<div></div>
-						</div>
-						Каталог
-					</button>
-					<ul class="header__nav-list">
-						<li class="header__nav-item"><a href="" class="header__nav-link">О бренде</a></li>
-						<li class="header__nav-item"><a href="" class="header__nav-link">Покупателям</a></li>
-					</ul>
+					<a href="" class="header__back-btn">
+						<svg>
+							<use xlink:href="img/icons/icons.svg#icon-arrow-1"></use>
+						</svg>
+						назад в магазин
+					</a>
 					<a href="" class="header__logo-link">
 						<img src="img/logotypes/logo.svg" class="header__logo-img">
 					</a>
-					<ul class="header__nav-list">
-						<li class="header__nav-item"><a href="" class="header__nav-link">Шоурум в Москве</a></li>
-						<li class="header__nav-item"><a href="" class="header__nav-link">Контакты</a></li>
-					</ul>
 					<div class="header__tools">
 						<button class="header__tools-btn" open-search-popup>
 							<svg>
@@ -201,59 +143,6 @@
 							</svg>
 							<div class="header__tools-btn-count">3</div>
 						</button>
-					</div>
-				</div>
-			</div>
-			<div class="catalog-menu">
-				<div class="__container">
-					<div class="catalog-menu__wrapper">
-						<div class="catalog-menu__list-links">
-							<a href="#" class="catalog-menu__link _active" data-block="catalog-block-1">Кресты</a>
-							<a href="#" class="catalog-menu__link" data-block="catalog-block-2">Подвески</a>
-							<a href="#" class="catalog-menu__link" data-block="catalog-block-3">Цепи</a>
-							<a href="#" class="catalog-menu__link" data-block="catalog-block-4">Шнурки</a>
-							<a href="#" class="catalog-menu__link" data-block="catalog-block-5">Кольца и перстни</a>
-							<a href="#" class="catalog-menu__link" data-block="catalog-block-6">Браслеты</a>
-							<a href="#" class="catalog-menu__link" data-block="catalog-block-7">Бусины</a>
-							<a href="#" class="catalog-menu__link" data-block="catalog-block-8">Серьги</a>
-							<a href="#" class="catalog-menu__link" data-block="catalog-block-9">Аксессуары</a>
-						</div>
-						<div class="catalog-menu__list-blocks">
-							<div class="catalog-menu__block _active" data-blockId="catalog-block-1">
-								<div class="catalog-menu__block-side">
-									<a href="" class="catalog-menu__block-link _main">
-										Все изделия
-										<svg>
-											<use xlink:href="img/icons/icons.svg#icon-arrow-1"></use>
-										</svg>
-									</a>
-									<a href="" class="catalog-menu__block-link">Серебряные</a>
-									<a href="" class="catalog-menu__block-link">Позолоченные</a>
-									<a href="" class="catalog-menu__block-link _active">Из дерева</a>
-								</div>
-								<div class="catalog-menu__block-media">
-									<img src="img/content/catalog-menu-1.webp" class="">
-									<img src="img/content/catalog-menu-2.webp" class="">
-								</div>
-							</div>
-							<div class="catalog-menu__block" data-blockId="catalog-block-2">
-								<div class="catalog-menu__block-side">
-									<a href="" class="catalog-menu__block-link _main">
-										Все изделия
-										<svg>
-											<use xlink:href="img/icons/icons.svg#icon-arrow-1"></use>
-										</svg>
-									</a>
-									<a href="" class="catalog-menu__block-link">Позолоченные</a>
-									<a href="" class="catalog-menu__block-link">Серебряные</a>
-									<a href="" class="catalog-menu__block-link _active">Из дерева</a>
-								</div>
-								<div class="catalog-menu__block-media">
-									<img src="img/content/catalog-menu-2.webp" class="">
-									<img src="img/content/catalog-menu-1.webp" class="">
-								</div>
-							</div>
-						</div>
 					</div>
 				</div>
 			</div>
@@ -382,224 +271,424 @@
 					<div class="breadcrumbs__wrapper">
 						<a href="" class="breadcrumbs__link">Главная</a>
 						<div class="breadcrumbs__separator"></div>
-						<a href="" class="breadcrumbs__link">Каталог</a>
+						<a href="" class="breadcrumbs__link">Оформление заказа</a>
 					</div>
 				</div>
 			</section>
-			<section class="sections">
+			<section class="order">
 				<div class="__container">
-					<div class="sections__title">Каталог украшений</div>
-					<div class="sections__grid">
-						<div class="sections__row">
-							<div class="sections__col">
-								<div class="block _num-1">
-									<div class="block__title">Кресты</div>
-									<div class="block__list">
-										<a href="" class="block__list-item">Название подраздела</a>
-										<a href="" class="block__list-item">Еще одно название рубрики</a>
-										<a href="" class="block__list-item">Третье название</a>
-										<a href="" class="block__list-item">Четвертое название</a>
-										<a href="" class="block__list-item">Пятое название с описанием</a>
+					<div class="order__title">Оформление заказа</div>
+					<div class="order__subtitle">Проверьте данные и выберите удобный способ доставки и оплаты</div>
+					<div class="order__wrapper">
+						<div class="order__body">
+							<div class="order__block">
+								<div class="order__title-1 _mb-30">Данные покупателя</div>
+								<div class="order__toggler _mb-40">
+									<div class="order__toggler-item">
+										<div class="order__toggler-item-dot"></div>
 									</div>
-									<div class="block__link-wrapper">
-										<a href="" class="block__link">Все изделия
-											<svg>
-												<use xlink:href="img/icons/icons.svg#icon-arrow-1"></use>
-											</svg>
-										</a>
+									<span>Юридическое лицо</span>
+								</div>
+								<div class="order__field _mb-30">
+									<div class="order__field-title _mb-20">Имя и фамилия</div>
+									<div class="order__field-input">
+										<input type="text" placeholder="Введите Имя и Фамилию">
 									</div>
-									<div class="block__image">
-										<img src="img/content/sections-1.webp" class="block__img">
+								</div>
+								<div class="order__additional-fields">
+									<div class="order__field _mb-30">
+										<div class="order__field-title _mb-20">Название компании</div>
+										<div class="order__field-input">
+											<input type="text" placeholder="Укажите название компании">
+										</div>
+									</div>
+									<div class="order__field _mb-30">
+										<div class="order__field-title _mb-20">Юридический адрес</div>
+										<div class="order__field-input">
+											<input type="text" placeholder="Укажите юридический адрес">
+										</div>
+									</div>
+									<div class="order__2cols _mb-30">
+										<div class="order__field">
+											<div class="order__field-title _mb-20">ИНН</div>
+											<div class="order__field-input">
+												<input type="text" placeholder="Введите ИНН">
+											</div>
+										</div>
+										<div class="order__field">
+											<div class="order__field-title _mb-20">КПП</div>
+											<div class="order__field-input">
+												<input type="email" placeholder="Укажите КПП">
+											</div>
+										</div>
+									</div>
+									<div class="order__2cols _mb-30">
+										<div class="order__field">
+											<div class="order__field-title _mb-20">ОГРН</div>
+											<div class="order__field-input">
+												<input type="text" placeholder="Введите ОГРН">
+											</div>
+										</div>
+										<div class="order__field">
+											<div class="order__field-title _mb-20">ОКПО</div>
+											<div class="order__field-input">
+												<input type="email" placeholder="Укажите ОКПО">
+											</div>
+										</div>
+									</div>
+									<div class="order__2cols _mb-30">
+										<div class="order__field">
+											<div class="order__field-title _mb-20">БИК</div>
+											<div class="order__field-input">
+												<input type="text" placeholder="Введите БИК">
+											</div>
+										</div>
+									</div>
+									<div class="order__field _mb-30">
+										<div class="order__field-title _mb-20">Банк</div>
+										<div class="order__field-input">
+											<input type="text" placeholder="Укажите название банка">
+										</div>
+									</div>
+									<div class="order__2cols _mb-30">
+										<div class="order__field">
+											<div class="order__field-title _mb-20">Расчетный счет</div>
+											<div class="order__field-input">
+												<input type="text" placeholder="Введите расчетный счет">
+											</div>
+										</div>
+										<div class="order__field">
+											<div class="order__field-title _mb-20">Корр счет</div>
+											<div class="order__field-input">
+												<input type="email" placeholder="Укажите корр счет">
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="order__2cols _mb-30">
+									<div class="order__field">
+										<div class="order__field-title _mb-20">Телефон</div>
+										<div class="order__field-input">
+											<input type="text" placeholder="+7 (___) ___-__-__">
+										</div>
+									</div>
+									<div class="order__field">
+										<div class="order__field-title _mb-20">E-mail</div>
+										<div class="order__field-input">
+											<input type="email" placeholder="Укажите e-mail">
+										</div>
+									</div>
+								</div>
+								<div class="order__subtext">Номер телефона и e-mail используется для оповещений об изменениях статуса заказа</div>
+								<script>
+									document.addEventListener('click', function(e) {
+										const toggler = e.target.closest('.order__toggler');
+										if (!toggler) return;
+
+										e.preventDefault();
+										toggler.classList.toggle('_active');
+
+										// Если блоки повторяются, ищем поля внутри ближайшего контейнера заказа
+										const scope = toggler.closest('.order') || document;
+										const additional = scope.querySelector('.order__additional-fields');
+
+										if (additional) {
+											additional.classList.toggle('_active');
+										}
+									});
+								</script>
+							</div>
+							<div class="order__block">
+								<div class="order__title-1 _mb-30">Адрес доставки</div>
+								<div class="order__field _mb-30">
+									<div class="order__field-title _mb-20">Населенный пункт</div>
+									<div class="order__field-input">
+										<input type="text" placeholder="г. Москва">
 									</div>
 								</div>
 							</div>
-							<div class="sections__col">
-								<div class="block _num-2">
-									<div class="block__title">Подвески</div>
-									<div class="block__list">
-										<a href="" class="block__list-item">Название подраздела</a>
-										<a href="" class="block__list-item">Еще одно название м</a>
-										<a href="" class="block__list-item">Третье название</a>
+							<div class="order__block">
+								<div class="order__title-1 _mb-30">Способ доставки</div>
+								<div class="order__delivery-list">
+									<div class="order__delivery-item _active">
+										<div class="order__delivery-item-wrapper">
+											<div class="order__delivery-image">
+												<img src="img/content/delivery-1__active.webp" class="order__delivery-img">
+											</div>
+											<div class="order__delivery-content">
+												<div class="order__delivery-name">Самовывоз из шоурума в Москве</div>
+												<div class="order__delivery-info">
+													<div class="order__delivery-free">Бесплатно</div>
+													<div class="order__delivery-gift">
+														<img src="img/icons/gift.svg" class="order__delivery-gift-img">
+														Памятный подарок и вкусный кофе всем клиентам!
+													</div>
+												</div>
+											</div>
+											<div class="order__delivery-checkbox-wrapper">
+												<div class="order__delivery-checkbox">
+													<label class="checkbox-container _big">
+														<input type="checkbox" name="delivery" checked="checked">
+														<span class="checkmark"></span>
+													</label>
+												</div>
+											</div>
+										</div>
 									</div>
-									<div class="block__link-wrapper">
-										<a href="" class="block__link">Все изделия
-											<svg>
-												<use xlink:href="img/icons/icons.svg#icon-arrow-1"></use>
-											</svg>
-										</a>
+									<div class="order__delivery-item">
+										<div class="order__delivery-item-wrapper">
+											<div class="order__delivery-image">
+												<img src="img/content/delivery-2_active.webp" class="order__delivery-img">
+											</div>
+											<div class="order__delivery-content">
+												<div class="order__delivery-name">«Доставка СДЕК» по всей России по тарифам ТК</div>
+												<div class="order__delivery-info">
+													<div class="order__delivery-price">от 300 ₽ </div>
+												</div>
+											</div>
+											<div class="order__delivery-checkbox-wrapper">
+												<div class="order__delivery-checkbox">
+													<label class="checkbox-container _big">
+														<input type="checkbox" name="delivery">
+														<span class="checkmark"></span>
+													</label>
+												</div>
+											</div>
+										</div>
+										<div class="order__delivery-options">
+											<div class="order__options-item">
+												<div class="order__options-name">Курьером СДЕК</div>
+												<div class="order__options-price">900 ₽ </div>
+												<div class="order__options-time">2-3 дня</div>
+												<div class="order__options-button">
+													<button class="order__options-btn">
+														<span>Выбрано</span>
+														<span>Выбрать пункт</span>
+													</button>
+												</div>
+											</div>
+											<div class="order__options-item">
+												<div class="order__options-name">Постамат СДЕК </div>
+												<div class="order__options-price">300 ₽ </div>
+												<div class="order__options-time">2-3 дня</div>
+												<div class="order__options-button">
+													<button class="order__options-btn">
+														<span>Выбрано</span>
+														<span>Выбрать пункт</span>
+													</button>
+												</div>
+											</div>
+											<div class="order__options-item">
+												<div class="order__options-name">ПВЗ СДЕК</div>
+												<div class="order__options-price">300 ₽ </div>
+												<div class="order__options-time">2-3 дня</div>
+												<div class="order__options-button">
+													<button class="order__options-btn">
+														<span>Выбрано</span>
+														<span>Выбрать пункт</span>
+													</button>
+												</div>
+											</div>
+											<script>
+												document.addEventListener('click', function(e) {
+													const item = e.target.closest('.order__options-item');
+													if (!item) return;
+
+													const items = document.querySelectorAll('.order__options-item');
+
+													items.forEach(function(el) {
+														el.classList.remove('_active');
+														const cb = el.querySelector('input[type="checkbox"]');
+														if (cb) cb.checked = false;
+													});
+
+													item.classList.add('_active');
+													const activeCb = item.querySelector('input[type="checkbox"]');
+													if (activeCb) activeCb.checked = true;
+												});
+											</script>
+										</div>
 									</div>
-									<div class="block__image">
-										<img src="img/content/sections-2.webp" class="block__img">
+									<script>
+										document.addEventListener('click', function(e) {
+											const item = e.target.closest('.order__delivery-item');
+											if (!item) return;
+
+											const items = document.querySelectorAll('.order__delivery-item');
+
+											items.forEach(function(el) {
+												el.classList.remove('_active');
+												const cb = el.querySelector('input[type="checkbox"]');
+												if (cb) cb.checked = false;
+											});
+
+											item.classList.add('_active');
+											const activeCb = item.querySelector('input[type="checkbox"]');
+											if (activeCb) activeCb.checked = true;
+										});
+									</script>
+								</div>
+							</div>
+							<div class="order__block">
+								<div class="order__title-1 _mb-30">Способ оплаты</div>
+								<div class="order__payment-list">
+									<div class="order__payment _active">
+										<div class="order__payment-name">Банковской картой на сайте</div>
+										<div class="order__payment-wrapper">
+											<div class="order__payment-icon">
+												<svg class="order__payment-img" width="45" height="45">
+													<use xlink:href="img/icons/icons.svg#payment-method-1"></use>
+												</svg>
+											</div>
+											<div class="order__payment-check">
+												<label class="checkbox-container _big">
+													<input type="checkbox" name="delivery" checked="checked">
+													<span class="checkmark"></span>
+												</label>
+											</div>
+										</div>
+									</div>
+									<div class="order__payment">
+										<div class="order__payment-name">Оплата на ПВЗ СДЕК по получению</div>
+										<div class="order__payment-wrapper">
+											<div class="order__payment-icon">
+												<svg class="order__payment-img" width="45" height="12">
+													<use xlink:href="img/icons/icons.svg#payment-method-2"></use>
+												</svg>
+											</div>
+											<div class="order__payment-check">
+												<label class="checkbox-container _big">
+													<input type="checkbox" name="delivery">
+													<span class="checkmark"></span>
+												</label>
+											</div>
+										</div>
+									</div>
+									<div class="order__payment">
+										<div class="order__payment-name">Оплата в шоуруме по получению</div>
+										<div class="order__payment-wrapper">
+											<div class="order__payment-icon">
+												<svg class="order__payment-img" width="45" height="45">
+													<use xlink:href="img/icons/icons.svg#payment-method-3"></use>
+												</svg>
+											</div>
+											<div class="order__payment-check">
+												<label class="checkbox-container _big">
+													<input type="checkbox" name="delivery">
+													<span class="checkmark"></span>
+												</label>
+											</div>
+										</div>
+									</div>
+									<div class="order__payment">
+										<div class="order__payment-name">Безналичный расчет по реквизитам</div>
+										<div class="order__payment-wrapper">
+											<div class="order__payment-icon">
+												<svg class="order__payment-img" width="45" height="45">
+													<use xlink:href="img/icons/icons.svg#payment-method-4"></use>
+												</svg>
+											</div>
+											<div class="order__payment-check">
+												<label class="checkbox-container _big">
+													<input type="checkbox" name="delivery">
+													<span class="checkmark"></span>
+												</label>
+											</div>
+										</div>
+									</div>
+									<div class="order__payment">
+										<div class="order__payment-name">Яндекс Сплит (скоро!)</div>
+										<div class="order__payment-wrapper">
+											<div class="order__payment-icon">
+												<svg class="order__payment-img" width="90" height="17">
+													<use xlink:href="img/icons/icons.svg#payment-method-5"></use>
+												</svg>
+											</div>
+											<div class="order__payment-check">
+												<label class="checkbox-container _big">
+													<input type="checkbox" name="delivery">
+													<span class="checkmark"></span>
+												</label>
+											</div>
+										</div>
+									</div>
+									<script>
+										document.addEventListener('click', function(e) {
+											const item = e.target.closest('.order__payment');
+											if (!item) return;
+
+											const items = document.querySelectorAll('.order__payment');
+
+											items.forEach(function(el) {
+												el.classList.remove('_active');
+												const cb = el.querySelector('input[type="checkbox"]');
+												if (cb) cb.checked = false;
+											});
+
+											item.classList.add('_active');
+											const activeCb = item.querySelector('input[type="checkbox"]');
+											if (activeCb) activeCb.checked = true;
+										});
+									</script>
+								</div>
+								<div class="order__text">Вы сможете оплатить заказ на сайте с помощью карты или СБП после оформление заказа и подтверждения менеджером. Оператор эквайринга – Юкасса.</div>
+							</div>
+							<div class="order__block">
+								<div class="order__title-1 _mb-30">Дополнительно</div>
+								<div class="order__delivery-list">
+									<div class="order__delivery-item _active">
+										<div class="order__delivery-item-wrapper">
+											<div class="order__delivery-image">
+												<img src="img/content/order-gift.webp" class="order__delivery-img">
+											</div>
+											<div class="order__delivery-content">
+												<div class="order__delivery-name">Хочу подарочную упаковку</div>
+												<div class="order__delivery-info">
+													<div class="order__delivery-price">490₽</div>
+												</div>
+											</div>
+											<div class="order__delivery-checkbox-wrapper">
+												<div class="order__delivery-checkbox">
+													<label class="checkbox-container _big">
+														<input type="checkbox" name="delivery" checked="checked">
+														<span class="checkmark"></span>
+													</label>
+												</div>
+											</div>
+										</div>
 									</div>
 								</div>
-								<div class="block _num-3">
-									<div class="block__title">Цепи</div>
-									<div class="block__list">
-										<a href="" class="block__list-item">Название подраздела</a>
-										<a href="" class="block__list-item">Еще одно название</a>
-										<a href="" class="block__list-item">Третье название</a>
-									</div>
-									<div class="block__link-wrapper">
-										<a href="" class="block__link">Все изделия
-											<svg>
-												<use xlink:href="img/icons/icons.svg#icon-arrow-1"></use>
-											</svg>
-										</a>
-									</div>
-									<div class="block__image">
-										<img src="img/content/sections-3.webp" class="block__img">
-									</div>
+							</div>
+							<div class="order__block">
+								<button class="order__submit _mb-40">ОФОРМИТЬ</button>
+								<div class="order__bottom-text">
+									Нажимая «Оформить заказ», вы соглашаетесь с условиями <a href="">Пользовательского соглашения</a>, <a href="">Политики конфиденциальности</a> и <a href="">Обработки персональных данных</a>
 								</div>
 							</div>
 						</div>
-						<div class="sections__row">
-							<div class="sections__col">
-								<div class="block _num-4">
-									<div class="block__title">Браслеты</div>
-									<div class="block__list">
-										<a href="" class="block__list-item">Название подраздела</a>
-										<a href="" class="block__list-item">Еще одно название рубрики</a>
-										<a href="" class="block__list-item">Третье название</a>
-										<a href="" class="block__list-item">Четвертое название</a>
-										<a href="" class="block__list-item">Пятое название с описанием</a>
+						<div class="order__sidebar _mb-40">
+							<div class="order__sidebar-sticky">
+								<div class="order__sidebar-wrapper">
+									<div class="order__sidebar-title">Ваша корзина</div>
+									<div class="order__sidebar-info">
+										<div>3 товара</div>
+										<div>245 000 ₽ </div>
 									</div>
-									<div class="block__link-wrapper">
-										<a href="" class="block__link">Все изделия
-											<svg>
-												<use xlink:href="img/icons/icons.svg#icon-arrow-1"></use>
-											</svg>
-										</a>
+									<div class="order__sidebar-info">
+										<div>Скидка</div>
+										<div>10 000 ₽</div>
 									</div>
-									<div class="block__image">
-										<img src="img/content/sections-6.webp" class="block__img">
+									<div class="order__sidebar-info">
+										<div>Доставка</div>
+										<div>по тарифам ТК</div>
 									</div>
-								</div>
-							</div>
-							<div class="sections__col">
-								<div class="block _num-5">
-									<div class="block__title">Шнурки</div>
-									<div class="block__list">
-										<a href="" class="block__list-item">Название подраздела</a>
-										<a href="" class="block__list-item">Еще одно название м</a>
-										<a href="" class="block__list-item">Третье название</a>
-									</div>
-									<div class="block__link-wrapper">
-										<a href="" class="block__link">Все изделия
-											<svg>
-												<use xlink:href="img/icons/icons.svg#icon-arrow-1"></use>
-											</svg>
-										</a>
-									</div>
-									<div class="block__image">
-										<img src="img/content/sections-4.webp" class="block__img">
-									</div>
-								</div>
-								<div class="block _num-6">
-									<div class="block__title">Кольца и перстни</div>
-									<div class="block__list">
-										<a href="" class="block__list-item">Название подраздела</a>
-										<a href="" class="block__list-item">Еще одно название</a>
-										<a href="" class="block__list-item">Третье название</a>
-									</div>
-									<div class="block__link-wrapper">
-										<a href="" class="block__link">
-											Все изделия
-											<svg>
-												<use xlink:href="img/icons/icons.svg#icon-arrow-1"></use>
-											</svg>
-										</a>
-									</div>
-									<div class="block__image">
-										<img src="img/content/sections-5.webp" class="block__img">
+									<hr>
+									<div class="order__sidebar-total">
+										<div>Итого</div>
+										<div>245 000 ₽</div>
 									</div>
 								</div>
 							</div>
-						</div>
-						<div class="sections__row">
-							<div class="sections__col">
-								<div class="block _num-7">
-									<div class="block__title">Серьги</div>
-									<div class="block__list">
-										<a href="" class="block__list-item">Название подраздела</a>
-										<a href="" class="block__list-item">Еще одно название рубрики</a>
-										<a href="" class="block__list-item">Третье название</a>
-										<a href="" class="block__list-item">Четвертое название</a>
-										<a href="" class="block__list-item">Пятое название с описанием</a>
-									</div>
-									<div class="block__link-wrapper">
-										<a href="" class="block__link">Все изделия
-											<svg>
-												<use xlink:href="img/icons/icons.svg#icon-arrow-1"></use>
-											</svg>
-										</a>
-									</div>
-									<div class="block__image">
-										<img src="img/content/sections-7.webp" class="block__img">
-									</div>
-								</div>
-							</div>
-							<div class="sections__col">
-								<div class="block _num-8">
-									<div class="block__title">Бусины</div>
-									<div class="block__list">
-										<a href="" class="block__list-item">Название подраздела</a>
-										<a href="" class="block__list-item">Еще одно название м</a>
-										<a href="" class="block__list-item">Третье название</a>
-									</div>
-									<div class="block__link-wrapper">
-										<a href="" class="block__link">Все изделия
-											<svg>
-												<use xlink:href="img/icons/icons.svg#icon-arrow-1"></use>
-											</svg>
-										</a>
-									</div>
-									<div class="block__image">
-										<img src="img/content/sections-8.webp" class="block__img">
-									</div>
-								</div>
-								<div class="block _num-9">
-									<div class="block__title">Аксессуары</div>
-									<div class="block__list">
-										<a href="" class="block__list-item">Название подраздела</a>
-										<a href="" class="block__list-item">Еще одно название</a>
-										<a href="" class="block__list-item">Третье название</a>
-									</div>
-									<div class="block__link-wrapper">
-										<a href="" class="block__link">Все изделия
-											<svg>
-												<use xlink:href="img/icons/icons.svg#icon-arrow-1"></use>
-											</svg>
-										</a>
-									</div>
-									<div class="block__image">
-										<img src="img/content/sections-9.webp" class="block__img">
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-			<section class="sections-features">
-				<div class="__container">
-					<div class="sections-features__list">
-						<div class="sections-features__item">
-							<div class="sections-features__image">
-								<img src="img/content/sections-features-1.webp" class="sections-features__img">
-							</div>
-							<div class="sections-features__title">Собственное <br> производство</div>
-						</div>
-						<div class="sections-features__item">
-							<div class="sections-features__image">
-								<img src="img/content/sections-features-2.webp" class="sections-features__img">
-							</div>
-							<div class="sections-features__title">Изделия высокой <br> точности детализации</div>
-						</div>
-						<div class="sections-features__item">
-							<div class="sections-features__image">
-								<img src="img/content/sections-features-3.webp" class="sections-features__img">
-							</div>
-							<div class="sections-features__title">Уникальный <br> дизайн изделий</div>
 						</div>
 					</div>
 				</div>
