@@ -7962,6 +7962,207 @@ textarea::placeholder {
   mix-blend-mode: luminosity;
   border: 1px solid #fff
 }
+.buyers__title {
+  margin: 60px auto 40px;
+  font-family: "Cormorant Garamond";
+  font-size: 86px;
+  font-weight: 600;
+  line-height: .97;
+  text-transform: uppercase;
+  text-align: center
+}
+.buyers__subtitle {
+  margin: 40px auto 70px;
+  font-size: 18px;
+  font-weight: 500;
+  text-align: center
+}
+.buyers__grid {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 80px 40px;
+  max-width: 1600px;
+  margin: 0 auto 80px
+}
+.buyers__grid-item {
+  position: relative;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,.3);
+  background: rgba(0,0,0,.35);
+  backdrop-filter: blur(2px);
+  height: 445px;
+  padding: 80px 70px
+}
+.buyers__grid-item._full-width {
+  grid-column: span 2;
+  height: 345px;
+  border: 1px solid #ed6f2d
+}
+.buyers__grid-item a {
+  color: #ed6f2d;
+  font-size: 15px;
+  text-decoration: underline
+}
+.buyers__grid-item a:hover {
+  text-decoration: none
+}
+.buyers__grid-title {
+  font-family: "Cormorant Garamond";
+  font-size: 42px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 40px
+}
+.buyers__grid-title._orange {
+  color: #ed6f2d;
+  font-size: 52px
+}
+.buyers__grid-body {
+  display: flex;
+  gap: 30px
+}
+.buyers__grid-image {
+  width: 120px;
+  height: 120px;
+  flex-shrink: 0
+}
+._full-width .buyers__grid-image {
+  position: absolute;
+  right: 240px;
+  top: -45px;
+  width: 320px;
+  height: 320px
+}
+.buyers__grid-img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover
+}
+.buyers__grid-name {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.22;
+  margin-bottom: 20px
+}
+.buyers__grid-list {
+  max-width: 680px;
+  line-height: 1.2
+}
+.buyers__grid-list ul {
+  display: flex;
+  flex-direction: column;
+  gap: 12px
+}
+.buyers__grid-list li {
+  display: flex;
+  gap: 12px
+}
+.buyers__grid-list li img {
+  flex: 0 0 auto;
+  width: 20px;
+  height: 20px
+}
+.buyers__grid-footer {
+  display: flex;
+  gap: 30px;
+  margin-top: 60px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.22
+}
+.buyers__info {
+  max-width: 1600px;
+  margin: 0 auto 150px;
+  display: flex;
+  align-items: center;
+  gap: 125px
+}
+.buyers__info-image {
+  flex: 0 0 535px
+}
+.buyers__info-img {
+  width: 100%;
+  height: auto
+}
+.buyers__info-content {
+  display: flex;
+  flex-direction: column;
+  gap: 50px
+}
+.buyers__info-title {
+  font-family: "Cormorant Garamond";
+  font-size: 52px;
+  font-weight: 600;
+  line-height: normal;
+  text-transform: uppercase
+}
+.buyers__info-title span {
+  color: #ed6f2d;
+  display: block
+}
+.buyers__info-text {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.22;
+  display: flex;
+  flex-direction: column;
+  gap: 25px
+}
+.buyers__info-text a {
+  color: #ed6f2d
+}
+.buyers__info-button {
+  border-radius: 4px;
+  background: #ed6f2d;
+  font-family: "Cormorant Garamond";
+  font-weight: 700;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  width: 100%;
+  max-width: 230px;
+  border: 1px solid transparent;
+  transition: background-color .2s ease-in-out,border-color .3s ease-in-out,color .3s ease-in-out
+}
+.buyers__info-button:hover {
+  background-color: rgba(0,0,0,0);
+  border: 1px solid #fff
+}
+.buyers__offer {
+  display: flex;
+  margin-bottom: 150px
+}
+.buyers__offer-item {
+  flex: 0 1 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 42px;
+  border-left: 1px solid rgba(255,255,255,.5);
+  padding: 70px 15px 50px
+}
+.buyers__offer-item:last-child {
+  border-right: 1px solid rgba(255,255,255,.5)
+}
+.buyers__offer-image {
+  width: 120px;
+  height: 120px
+}
+.buyers__offer-img {
+  -o-object-fit: cover;
+  object-fit: cover;
+  width: 100%;
+  height: 100%
+}
+.buyers__offer-title {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.22
+}
 .swiper {
   overflow: hidden
 }
@@ -8183,6 +8384,50 @@ textarea::placeholder {
   }
   .showroom__form-wrapper::after {
     right: -15px
+  }
+  .buyers__title {
+    font-size: 76px;
+    line-height: 1.02
+  }
+  .buyers__subtitle {
+    margin: 40px auto 60px
+  }
+  .buyers__grid {
+    gap: 95px 30px;
+    margin: 0 auto 85px
+  }
+  .buyers__grid-item {
+    padding: 80px 30px
+  }
+  .buyers__grid-title {
+    font-size: 38px;
+    margin-bottom: 32px
+  }
+  .buyers__grid-title._orange {
+    font-size: 42px
+  }
+  ._full-width .buyers__grid-image {
+    right: 85px;
+    top: -45px
+  }
+  .buyers__grid-list {
+    max-width: 600px
+  }
+  .buyers__grid-footer {
+    font-size: 15px
+  }
+  .buyers__info {
+    margin: 0 auto 100px;
+    gap: 70px
+  }
+  .buyers__info-image {
+    flex: 0 0 470px
+  }
+  .buyers__info-title {
+    font-size: 42px
+  }
+  .buyers__offer {
+    margin-bottom: 100px
   }
 }
 @media (max-width:1600px) {
@@ -8925,6 +9170,50 @@ textarea::placeholder {
   .showroom__form-wrapper::after,
   .showroom__form-wrapper::before {
     display: none
+  }
+  .buyers__title {
+    font-size: 62px;
+    margin: 50px auto 40px
+  }
+  .buyers__subtitle {
+    font-size: 16px
+  }
+  .buyers__grid {
+    grid-template-columns: repeat(1,1fr);
+    gap: 30px
+  }
+  .buyers__grid-item._full-width {
+    grid-column: span 1;
+    margin-top: 40px
+  }
+  ._full-width .buyers__grid-image {
+    right: 30px;
+    top: -40px;
+    width: 180px;
+    height: 180px
+  }
+  .buyers__grid-list {
+    max-width: 560px;
+    font-size: 15px
+  }
+  .buyers__grid-footer {
+    font-size: 15px
+  }
+  .buyers__info {
+    gap: 30px;
+    align-items: flex-start
+  }
+  .buyers__info-image {
+    flex: 0 0 180px
+  }
+  .buyers__offer {
+    flex-wrap: wrap
+  }
+  .buyers__offer-item {
+    flex: 0 1 50%
+  }
+  .buyers__offer-item:nth-child(2) {
+    border-right: 1px solid rgba(255,255,255,.5)
   }
 }
 @media (max-width:1279px)and (any-hover:none) {
@@ -9829,6 +10118,115 @@ textarea::placeholder {
     margin-left: -25px;
     margin-right: -25px;
     padding: 40px 25px 30px
+  }
+  .buyers__title {
+    font-size: 38px;
+    margin: 40px auto 30px
+  }
+  .buyers__subtitle {
+    font-size: 14px
+  }
+  .buyers__grid-item {
+    height: auto;
+    padding: 40px 30px
+  }
+  .buyers__grid-item._full-width {
+    margin-top: 0;
+    padding-bottom: 100px;
+    height: auto
+  }
+  .buyers__grid-title {
+    font-size: 26px;
+    margin-bottom: 30px
+  }
+  .buyers__grid-title._orange {
+    font-size: 26px
+  }
+  .buyers__grid-body {
+    gap: 20px
+  }
+  .buyers__grid-image {
+    width: 65px;
+    height: 65px
+  }
+  ._full-width .buyers__grid-image {
+    right: 30px;
+    bottom: 30px;
+    top: auto;
+    width: 100px;
+    height: 100px
+  }
+  .buyers__grid-list {
+    max-width: 560px;
+    font-size: 15px;
+    margin-left: -83px;
+    margin-top: 30px
+  }
+  .buyers__grid-list._mt-mob-40 {
+    margin-top: 40px
+  }
+  ._full-width .buyers__grid-list {
+    margin-left: 0
+  }
+  .buyers__grid-footer {
+    font-size: 15px;
+    margin-top: 30px
+  }
+  .buyers__info {
+    margin: 0 auto 60px;
+    flex-direction: column;
+    gap: 50px
+  }
+  .buyers__info-image {
+    flex: 0 0 100%;
+    width: 100%;
+    text-align: center
+  }
+  .buyers__info-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px
+  }
+  .buyers__info-title {
+    font-size: 28px
+  }
+  .buyers__info-text {
+    font-size: 16px;
+    gap: 15px
+  }
+  .buyers__info-text span {
+    display: block
+  }
+  .buyers__info-button {
+    max-width: 100%
+  }
+  .buyers__offer {
+    flex-direction: column;
+    margin-bottom: 70px
+  }
+  .buyers__offer-item {
+    flex: 0 1 100%;
+    flex-direction: row;
+    gap: 25px;
+    border-top: 1px solid rgba(255,255,255,.5);
+    border-left: none;
+    padding: 30px 0
+  }
+  .buyers__offer-item:last-child {
+    border-right: none;
+    border-bottom: 1px solid rgba(255,255,255,.5)
+  }
+  .buyers__offer-item:nth-child(2) {
+    border-right: none
+  }
+  .buyers__offer-image {
+    width: 65px;
+    height: 65px
+  }
+  .buyers__offer-title {
+    text-align: left;
+    font-size: 14px
   }
 }
 @media (max-width:1699px)and (min-width:1280px) {
