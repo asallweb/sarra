@@ -4119,6 +4119,23 @@
                 nextEl: ".hero-1__button-next"
             }
         });
+        if (document.querySelector(".contacts__slider")) new swiper_core_Swiper(".contacts__slider", {
+            modules: [ Pagination ],
+            observer: true,
+            observeParents: true,
+            slidesPerView: 1,
+            spaceBetween: 20,
+            speed: 800,
+            loop: false,
+            autoplay: {
+                delay: 3e3,
+                disableOnInteraction: true
+            },
+            pagination: {
+                el: ".contacts__pagination",
+                clickable: true
+            }
+        });
         if (document.querySelector(".product-slider__slider")) new swiper_core_Swiper(".product-slider__slider", {
             modules: [ Navigation ],
             observer: true,
