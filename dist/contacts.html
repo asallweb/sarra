@@ -6,13 +6,13 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20250923151833">
+	<link rel="stylesheet" href="css/style.min.css?_v=20250924154221">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap&_v=20250923151833" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap&_v=20250924154221" rel="stylesheet">
 </head>
 
 <body>
@@ -402,14 +402,14 @@
 						</div>
 						<div class="showroom__gift-item">
 							<div class="showroom__gift-name">Телефон</div>
-							<div class="showroom__gift-text">+7 (495) 741-15-48</div>
+							<a href="tel:+749574115 48" class="showroom__gift-text">+7 (495) 741-15-48</a>
 							<div class="showroom__gift-image">
 								<img src="img/content/showroom__gift-2.webp" class="showroom__gift-img">
 							</div>
 						</div>
 						<div class="showroom__gift-item">
 							<div class="showroom__gift-name">E-mail</div>
-							<div class="showroom__gift-text">info@sarra-shop.ru</div>
+							<a href="mailto:info@sarra-shop.ru" class="showroom__gift-text">info@sarra-shop.ru</a>
 							<div class="showroom__gift-image">
 								<img src="img/content/showroom__gift-3.webp" class="showroom__gift-img">
 							</div>
@@ -468,30 +468,46 @@
 			<section class="video-grid">
 				<div class="__container">
 					<div class="video-grid__wrapper">
-						<div class="video-grid__item video-file__wrapper">
-							<button class="play-button">
+						<div class="video-grid__item ">
+							<button class="play">
 								<svg class="_playing">
 									<use xlink:href="img/icons/icons.svg#icon-play"></use>
-								</svg>
-								<svg class="_paused">
-									<use xlink:href="img/icons/icons.svg#icon-paused"></use>
 								</svg>
 							</button>
 							<video src="files/video/6U3A9971.MOV" poster="img/content/video-grid-1.webp" class="video-file"></video>
 						</div>
-						<div class="video-grid__item video-file__wrapper">
-							<button class="play-button">
+						<div class="video-grid__item ">
+							<button class="play">
 								<svg class="_playing">
 									<use xlink:href="img/icons/icons.svg#icon-play"></use>
-								</svg>
-								<svg class="_paused">
-									<use xlink:href="img/icons/icons.svg#icon-paused"></use>
 								</svg>
 							</button>
 							<video src="files/video/6U3A9971.MOV" poster="img/content/video-grid-1.webp" class="video-file"></video>
 						</div>
 					</div>
 				</div>
+				<script>
+					document.addEventListener('DOMContentLoaded', function() {
+						document.querySelectorAll('.video-grid__item').forEach(function(wrapper) {
+							var btn = wrapper.querySelector('.play');
+							var video = wrapper.querySelector('video.video-file');
+							if (!btn || !video) return;
+
+							btn.addEventListener('click', function() {
+								btn.style.display = 'none';
+								video.controls = true;
+								if (video.paused) {
+									video.play().catch(function() {});
+								}
+							});
+
+							video.addEventListener('ended', function() {
+								video.controls = false;
+								btn.style.display = '';
+							});
+						});
+					});
+				</script>
 			</section>
 			<section class="company-info">
 				<div class="middle-background">
@@ -559,14 +575,14 @@
 						<div class="company-documents__title">
 							Юридические <span>документы</span>
 						</div>
-						<div class="company-documents__item">
+						<a href="#" class="company-documents__item">
 							<img src="img/content/company-documents-1.webp" class="">
 							Договор-оферта
-						</div>
-						<div class="company-documents__item">
+						</a>
+						<a href="#" class="company-documents__item">
 							<img src="img/content/company-documents-2.webp" class="">
 							Политика обработки персональных данных
-						</div>
+						</a>
 					</div>
 				</div>
 			</section>
@@ -682,7 +698,7 @@
 				</div>
 			</div>
 		</div>
-		<script src="js/app.min.js?_v=20250923151833"></script>
+		<script src="js/app.min.js?_v=20250924154221"></script>
 </body>
 
 </html>
