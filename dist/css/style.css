@@ -6118,10 +6118,8 @@ textarea::placeholder {
   color: #fff
 }
 .product-detail {
-  padding-bottom: 100px;
   margin-top: 10px;
-  margin-bottom: 100px;
-  border-bottom: 1px solid rgba(255,255,255,.5)
+  margin-bottom: 100px
 }
 .product-detail__wrapper {
   display: flex;
@@ -6361,7 +6359,9 @@ textarea::placeholder {
 .product-sides__wrapper {
   display: flex;
   justify-content: space-between;
-  gap: 75px
+  gap: 75px;
+  border-top: 1px solid rgba(255,255,255,.5);
+  padding-top: 100px
 }
 .product-sides__item {
   display: flex;
@@ -8010,7 +8010,7 @@ textarea::placeholder {
   border: 1px solid #fff
 }
 .buyers__title {
-  margin: 60px auto 40px;
+  margin: 8px auto 25px;
   font-family: "Cormorant Garamond";
   font-size: 86px;
   font-weight: 600;
@@ -8019,7 +8019,7 @@ textarea::placeholder {
   text-align: center
 }
 .buyers__subtitle {
-  margin: 40px auto 70px;
+  margin: 25px auto 70px;
   font-size: 18px;
   font-weight: 500;
   text-align: center
@@ -8029,7 +8029,7 @@ textarea::placeholder {
   grid-template-columns: repeat(2,1fr);
   gap: 80px 40px;
   max-width: 1600px;
-  margin: 0 auto 80px
+  margin: 0 auto 95px
 }
 .buyers__grid-item {
   position: relative;
@@ -8038,7 +8038,7 @@ textarea::placeholder {
   background: rgba(0,0,0,.35);
   backdrop-filter: blur(2px);
   height: 445px;
-  padding: 80px 70px
+  padding: 65px 70px
 }
 .buyers__grid-item._full-width {
   grid-column: span 2;
@@ -8058,7 +8058,7 @@ textarea::placeholder {
   font-size: 42px;
   font-weight: 600;
   text-transform: uppercase;
-  margin-bottom: 40px
+  margin-bottom: 30px
 }
 .buyers__grid-title._orange {
   color: #ed6f2d;
@@ -8120,7 +8120,7 @@ textarea::placeholder {
 }
 .buyers__info {
   max-width: 1600px;
-  margin: 0 auto 150px;
+  margin: 0 auto 135px;
   display: flex;
   align-items: center;
   gap: 125px
@@ -8135,7 +8135,7 @@ textarea::placeholder {
 .buyers__info-content {
   display: flex;
   flex-direction: column;
-  gap: 50px
+  gap: 40px
 }
 .buyers__info-title {
   font-family: "Cormorant Garamond";
@@ -8178,9 +8178,18 @@ textarea::placeholder {
   background-color: rgba(0,0,0,0);
   border: 1px solid #fff
 }
+.buyers__offer-list-title {
+  font-family: "Cormorant Garamond";
+  font-size: 52px;
+  font-weight: 600;
+  line-height: normal;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 62px
+}
 .buyers__offer {
   display: flex;
-  margin-bottom: 150px
+  margin-bottom: 162px
 }
 .buyers__offer-item {
   flex: 0 1 25%;
@@ -8974,19 +8983,23 @@ textarea::placeholder {
   .showroom__form-wrapper::after {
     right: -15px
   }
+  .buyers {
+    padding: 0 25px
+  }
   .buyers__title {
     font-size: 76px;
-    line-height: 1.02
+    line-height: 1.02;
+    margin-bottom: 20px
   }
   .buyers__subtitle {
-    margin: 40px auto 60px
+    margin: 20px auto 60px
   }
   .buyers__grid {
     gap: 95px 30px;
     margin: 0 auto 85px
   }
   .buyers__grid-item {
-    padding: 80px 30px
+    padding: 70px 30px
   }
   .buyers__grid-title {
     font-size: 38px;
@@ -9015,8 +9028,12 @@ textarea::placeholder {
   .buyers__info-title {
     font-size: 42px
   }
+  .buyers__offer-list-title {
+    font-size: 42px;
+    margin-bottom: 42px
+  }
   .buyers__offer {
-    margin-bottom: 100px
+    margin-bottom: 85px
   }
   .contacts__title {
     margin: 7px auto 26px;
@@ -9682,7 +9699,6 @@ textarea::placeholder {
     text-transform: uppercase
   }
   .product-detail {
-    padding-bottom: 40px;
     margin-bottom: 40px
   }
   .product-detail__wrapper {
@@ -9712,6 +9728,12 @@ textarea::placeholder {
   }
   .product-detail__button-next {
     display: flex
+  }
+  .product-sides {
+    margin-top: 40px
+  }
+  .product-sides__wrapper {
+    padding-top: 40px
   }
   .product-sides__item {
     gap: 30px
@@ -9909,16 +9931,20 @@ textarea::placeholder {
   .showroom__form-wrapper::before {
     display: none
   }
+  .buyers {
+    padding: 0 10px
+  }
   .buyers__title {
     font-size: 62px;
-    margin: 50px auto 40px
+    margin: 0 auto 27px
   }
   .buyers__subtitle {
     font-size: 16px
   }
   .buyers__grid {
     grid-template-columns: repeat(1,1fr);
-    gap: 30px
+    gap: 30px;
+    margin: 0 auto 103px
   }
   .buyers__grid-item._full-width {
     grid-column: span 1;
@@ -9939,16 +9965,19 @@ textarea::placeholder {
   }
   .buyers__info {
     gap: 30px;
-    align-items: flex-start
+    align-items: flex-start;
+    margin-bottom: 90px
   }
   .buyers__info-image {
     flex: 0 0 180px
   }
   .buyers__offer {
-    flex-wrap: wrap
+    flex-wrap: wrap;
+    margin-bottom: 132px
   }
   .buyers__offer-item {
-    flex: 0 1 50%
+    flex: 0 1 50%;
+    padding: 48px 15px 30px
   }
   .buyers__offer-item:nth-child(2) {
     border-right: 1px solid rgba(255,255,255,.5)
@@ -10839,7 +10868,7 @@ textarea::placeholder {
     display: none
   }
   .product-sides {
-    margin: 80px auto 70px
+    margin: 40px auto 70px
   }
   .product-sides__item {
     flex-direction: column;
@@ -11235,20 +11264,27 @@ textarea::placeholder {
     margin-right: -25px;
     padding: 40px 25px 30px
   }
+  .buyers {
+    padding: 0
+  }
   .buyers__title {
     font-size: 38px;
-    margin: 40px auto 30px
+    margin: 2px auto 21px
   }
   .buyers__subtitle {
-    font-size: 14px
+    font-size: 14px;
+    margin-bottom: 45px
+  }
+  .buyers__grid {
+    margin-bottom: 60px
   }
   .buyers__grid-item {
     height: auto;
-    padding: 40px 30px
+    padding: 33px 10px 33px 30px
   }
   .buyers__grid-item._full-width {
     margin-top: 0;
-    padding-bottom: 100px;
+    padding-bottom: 130px;
     height: auto
   }
   .buyers__grid-title {
@@ -11291,7 +11327,7 @@ textarea::placeholder {
   .buyers__info {
     margin: 0 auto 60px;
     flex-direction: column;
-    gap: 50px
+    gap: 42px
   }
   .buyers__info-image {
     flex: 0 0 100%;
@@ -11316,6 +11352,10 @@ textarea::placeholder {
   }
   .buyers__info-button {
     max-width: 100%
+  }
+  .buyers__offer-list-title {
+    font-size: 28px;
+    margin-bottom: 20px
   }
   .buyers__offer {
     flex-direction: column;
