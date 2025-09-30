@@ -4743,6 +4743,34 @@
         });
     });
     document.addEventListener("DOMContentLoaded", function() {
+        const videos = document.querySelectorAll("video");
+        if (!videos.length) return;
+        videos.forEach(video => {
+            video.muted = true;
+            video.autoplay = true;
+            video.playsInline = true;
+            video.setAttribute("muted", "");
+            video.setAttribute("autoplay", "");
+            video.setAttribute("playsinline", "");
+            const tryPlay = () => {
+                const playPromise = video.play();
+                if (playPromise && typeof playPromise.then === "function") playPromise.catch(() => {});
+            };
+            if (video.readyState >= 2) tryPlay(); else video.addEventListener("loadeddata", tryPlay, {
+                once: true
+            });
+            const container = video.closest(".video-file__wrapper") || video.closest(".product-detail__gallery-video");
+            if (container) {
+                const updateState = () => {
+                    if (video.paused) container.classList.remove("_playing"); else container.classList.add("_playing");
+                };
+                video.addEventListener("play", updateState);
+                video.addEventListener("pause", updateState);
+                updateState();
+            }
+        });
+    });
+    document.addEventListener("DOMContentLoaded", function() {
         const playButtons = document.querySelectorAll(".play-button");
         if (!playButtons.length) return;
         playButtons.forEach(button => {
