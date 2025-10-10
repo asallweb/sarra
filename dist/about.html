@@ -6,13 +6,13 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20251008145724">
+	<link rel="stylesheet" href="css/style.min.css?_v=20251010160708">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap&_v=20251008145724" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap&_v=20251010160708" rel="stylesheet">
 </head>
 
 <body>
@@ -79,7 +79,7 @@
 		ЗАГРУЗКА
 	</div>
 	<script>
-		document.addEventListener('DOMContentLoaded', function () {
+		window.addEventListener('load', function () {
 			var whiteLogo = document.querySelector('.preloader-logo__white');
 			var preloader = document.querySelector('.preloader');
 			var duration = 1800; // Длительность анимации в мс
@@ -472,17 +472,36 @@
 						Вдохновляемся традицией, открывая её заново, чтобы каждый мог прикоснуться к священному через красоту.
 					</div>
 					<div class="about-video__video">
-						<div class="video-file__wrapper">
-							<button class="play-button">
+						<div class="video-grid__item">
+							<button class="play">
 								<svg class="_playing">
 									<use xlink:href="img/icons/icons.svg#icon-play"></use>
 								</svg>
-								<svg class="_paused">
-									<use xlink:href="img/icons/icons.svg#icon-paused"></use>
-								</svg>
 							</button>
-							<video src="files/video/6U3A9971.MOV" poster="img/content/gallery-4.webp" class="video-file" loop muted open-product-gallery></video>
+							<video src="files/video/6U3A9971.MOV" poster="img/content/gallery-4.webp" class="video-file" loop muted></video>
 						</div>
+						<script>
+							document.addEventListener('DOMContentLoaded', function() {
+								document.querySelectorAll('.video-grid__item').forEach(function(wrapper) {
+									var btn = wrapper.querySelector('.play');
+									var video = wrapper.querySelector('video.video-file');
+									if (!btn || !video) return;
+
+									btn.addEventListener('click', function() {
+										btn.style.display = 'none';
+										video.controls = true;
+										if (video.paused) {
+											video.play().catch(function() {});
+										}
+									});
+
+									video.addEventListener('ended', function() {
+										video.controls = false;
+										btn.style.display = '';
+									});
+								});
+							});
+						</script>
 					</div>
 					<div class="about-video__title _bottom">
 						Пусть каждое изделие SARRA будет не просто украшением, а напоминанием о Божьем
@@ -490,10 +509,10 @@
 					</div>
 					<link rel="preconnect" href="https://fonts.googleapis.com">
 					<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-					<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap&_v=20251008145724" rel="stylesheet">
+					<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap&_v=20251010160708" rel="stylesheet">
 					<div class="about-video__podpis">
 						С любовью,
-						<span>Виктория (Сара) Гревцева</span>
+						<span>Виктория (Сарра) Гревцева</span>
 						и её команда
 					</div>
 				</div>
@@ -612,7 +631,7 @@
 			</div>
 		</div>
 	</div>
-	<script src="js/app.min.js?_v=20251008145724"></script>
+	<script src="js/app.min.js?_v=20251010160708"></script>
 </body>
 
 </html>

@@ -6,114 +6,122 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20251008145724">
+	<link rel="stylesheet" href="css/style.min.css?_v=20251010160708">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap&_v=20251008145724" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap&_v=20251010160708" rel="stylesheet">
 </head>
 
 <body>
 	<div class="wrapper">
-		<!-- 
-<section class="preloader">
-	<style>
-		.preloader{
-			position: fixed;
-			left: 0;
-			top: 0;
-			width: 100vw;
-			height: 100vh;
-			background-color: #000;
-			z-index: 100;
-			transition: opacity 0.5s;
-		}
-		.preloader-logo{
-			position: absolute;
-			left: 50%;
-			top: 50%;
-			transform: translate(-50%, -50%);
-		}
-		.preloader-logo img{
-			width: 300px;
-			height: 112px;
-		}
-		.preloader-logo__white{
-			position: absolute;
-			left: 0;
-			top: 0;
-			width: 0;
-			height: 100%;
-			overflow: hidden;
-		}
-		.preloader-text{
-			position: absolute;
-			left: 50%;
-			transform: translateX(-50%);
-			bottom: 10vh;
-		}
-		@keyframes preloaderTextColor {
-			0% {
-				color: #fff;
-			}
-			50% {
-				color: #3d3d3d;
-			}
-			100% {
-				color: #fff;
-			}
-		}
-		.preloader-text {
-			animation: preloaderTextColor 1s infinite;
-		}
-	</style>
-	<div class="preloader-logo">
-		<img src="img/logotypes/logo-grey.svg" class="preloader-logo__grey">
-		<div class="preloader-logo__white">
-			<img src="img/logotypes/logo.svg" class="preloader-logo__white">
-		</div>
-	</div>
-	<div class="preloader-text">
-		ЗАГРУЗКА
-	</div>
-	<script>
-		document.addEventListener('DOMContentLoaded', function () {
-			var whiteLogo = document.querySelector('.preloader-logo__white');
-			var preloader = document.querySelector('.preloader');
-			var duration = 1800; // Длительность анимации в мс
-			var fadeDuration = 300; // Длительность исчезновения прелоадера
-			var start = null;
 
-			// Блокируем скролл
-			document.body.style.overflow = 'hidden';
-
-			function animateWidth(timestamp) {
-				if (!start) start = timestamp;
-				var progress = (timestamp - start) / duration;
-				if (progress > 1) progress = 1;
-				whiteLogo.style.width = (progress * 100) + '%';
-				if (progress < 1) {
-					requestAnimationFrame(animateWidth);
-				} else {
-					// Анимация завершена — убираем прелоадер
-					preloader.style.transition = 'opacity ' + (fadeDuration/1000) + 's';
-					preloader.style.opacity = '0';
-					setTimeout(function() {
-						preloader.style.display = 'none';
-						document.body.style.overflow = '';
-						// Диспатчим событие о завершении прелоадера
-						window.dispatchEvent(new Event('preloader:done'));
-					}, fadeDuration);
+		<section class="preloader">
+			<style>
+				.preloader {
+					position: fixed;
+					left: 0;
+					top: 0;
+					width: 100vw;
+					height: 100vh;
+					background-color: #000;
+					z-index: 100;
+					transition: opacity 0.5s;
 				}
-			}
 
-			requestAnimationFrame(animateWidth);
-		});
-	</script>
-</section>
- -->
+				.preloader-logo {
+					position: absolute;
+					left: 50%;
+					top: 50%;
+					transform: translate(-50%, -50%);
+				}
+
+				.preloader-logo img {
+					width: 300px;
+					height: 112px;
+				}
+
+				.preloader-logo__white {
+					position: absolute;
+					left: 0;
+					top: 0;
+					width: 0;
+					height: 100%;
+					overflow: hidden;
+				}
+
+				.preloader-text {
+					position: absolute;
+					left: 50%;
+					transform: translateX(-50%);
+					bottom: 10vh;
+				}
+
+				@keyframes preloaderTextColor {
+					0% {
+						color: #fff;
+					}
+
+					50% {
+						color: #3d3d3d;
+					}
+
+					100% {
+						color: #fff;
+					}
+				}
+
+				.preloader-text {
+					animation: preloaderTextColor 1s infinite;
+				}
+			</style>
+			<div class="preloader-logo">
+				<img src="img/logotypes/logo-grey.svg" class="preloader-logo__grey">
+				<div class="preloader-logo__white">
+					<img src="img/logotypes/logo.svg" class="preloader-logo__white">
+				</div>
+			</div>
+			<div class="preloader-text">
+				ЗАГРУЗКА
+			</div>
+			<script>
+				window.addEventListener('load', function() {
+					var whiteLogo = document.querySelector('.preloader-logo__white');
+					var preloader = document.querySelector('.preloader');
+					var duration = 1800; // Длительность анимации в мс
+					var fadeDuration = 300; // Длительность исчезновения прелоадера
+					var start = null;
+
+					// Блокируем скролл
+					document.body.style.overflow = 'hidden';
+
+					function animateWidth(timestamp) {
+						if (!start) start = timestamp;
+						var progress = (timestamp - start) / duration;
+						if (progress > 1) progress = 1;
+						whiteLogo.style.width = (progress * 100) + '%';
+						if (progress < 1) {
+							requestAnimationFrame(animateWidth);
+						} else {
+							// Анимация завершена — убираем прелоадер
+							preloader.style.transition = 'opacity ' + (fadeDuration / 1000) + 's';
+							preloader.style.opacity = '0';
+							setTimeout(function() {
+								preloader.style.display = 'none';
+								document.body.style.overflow = '';
+								// Диспатчим событие о завершении прелоадера
+								window.dispatchEvent(new Event('preloader:done'));
+							}, fadeDuration);
+						}
+					}
+
+					requestAnimationFrame(animateWidth);
+				});
+			</script>
+		</section>
+
 		<header class="header" data-animate-name="animate__fadeInDown">
 			<div class="__container">
 				<div class="header__wrapper">
@@ -385,6 +393,16 @@
 						<a href="" class="breadcrumbs__link">Каталог</a>
 						<div class="breadcrumbs__separator"></div>
 						<a href="" class="breadcrumbs__link">Кресты</a>
+						<div class="breadcrumbs__separator"></div>
+						<a href="" class="breadcrumbs__link">Кресты</a>
+						<div class="breadcrumbs__separator"></div>
+						<a href="" class="breadcrumbs__link">Кресты</a>
+						<a href="" class="breadcrumbs__link _mobile">
+							<svg height="8px" width="8px">
+								<use xlink:href="img/icons/icons.svg#icon-arrow-3"></use>
+							</svg>
+							Кресты
+						</a>
 					</div>
 				</div>
 			</section>
@@ -404,7 +422,7 @@
 									<img src="img/content/gallery-2.webp" class="product-detail__gallery-img" open-product-gallery>
 								</div>
 								<div class="product-detail__gallery-item product-detail__slide swiper-slide">
-									<img src="img/content/gallery-3.webp" class="product-detail__gallery-img" open-product-gallery>
+									<img src="img/content/gallery-3.webp" class="product-detail__gallery-img" open-product-gallery lazyloading>
 								</div>
 								<div class="product-detail__gallery-item product-detail__slide swiper-slide">
 									<div class="product-detail__gallery-video video-file__wrapper">
@@ -416,17 +434,17 @@
 												<use xlink:href="img/icons/icons.svg#icon-paused"></use>
 											</svg>
 										</button>
-										<video src="files/video/video-1.mp4" poster="img/content/gallery-4.webp" class="product-detail__gallery-img video-file" autoplay loop muted open-product-gallery></video>
+										<video src="files/video/video-1.mp4" poster="img/content/gallery-4.webp" class="product-detail__gallery-img video-file" autoplay loop muted open-product-gallery lazyloading></video>
 									</div>
 								</div>
 								<div class="product-detail__gallery-item product-detail__slide swiper-slide">
-									<img src="img/content/gallery-5.webp" class="product-detail__gallery-img" open-product-gallery>
+									<img src="img/content/gallery-5.webp" class="product-detail__gallery-img" open-product-gallery lazyloading>
 								</div>
 								<div class="product-detail__gallery-item product-detail__slide swiper-slide">
-									<img src="img/content/gallery-6.webp" class="product-detail__gallery-img" open-product-gallery>
+									<img src="img/content/gallery-6.webp" class="product-detail__gallery-img" open-product-gallery lazyloading>
 								</div>
 								<div class="product-detail__gallery-item product-detail__slide swiper-slide">
-									<img src="img/content/gallery-7.webp" class="product-detail__gallery-img" open-product-gallery>
+									<img src="img/content/gallery-7.webp" class="product-detail__gallery-img" open-product-gallery lazyloading>
 								</div>
 							</div>
 							<button class="product-detail__button-next">
@@ -1628,7 +1646,7 @@
 			</div>
 		</div>
 	</div>
-	<script src="js/app.min.js?_v=20251008145724"></script>
+	<script src="js/app.min.js?_v=20251010160708"></script>
 </body>
 
 </html>

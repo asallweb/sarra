@@ -4629,12 +4629,12 @@
         const videos = document.querySelectorAll("video");
         if (!videos.length) return;
         videos.forEach(video => {
-            video.muted = true;
-            video.autoplay = true;
+            const hasAutoplayAttr = video.hasAttribute("autoplay");
+            if (!hasAutoplayAttr) return;
             video.playsInline = true;
-            video.setAttribute("muted", "");
-            video.setAttribute("autoplay", "");
             video.setAttribute("playsinline", "");
+            video.muted = true;
+            video.setAttribute("muted", "");
             const tryPlay = () => {
                 const playPromise = video.play();
                 if (playPromise && typeof playPromise.then === "function") playPromise.catch(() => {});
